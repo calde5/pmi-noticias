@@ -1,0 +1,1159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Página informativa no oficial con noticias públicas para el seguimiento de operaciones en España y Portugal.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Portfolio Monitoring Iberia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: credit-watchlist ledger. Navy header band with search and tabs; news as hairline rows with a relevance column on the left; fixed sidebar on desktop. */
+:root {
+  --bg: #f3f6f9;
+  --surface: #ffffff;
+  --ink: #0f1f33;
+  --muted: #55667a;
+  --line: #d9e1ea;
+  --band: #0f2d52;
+  --band-ink: #eef3f9;
+  --band-muted: #a9bdd4;
+  --band-line: #26466f;
+  --band-field: #173a66;
+  --accent: #2a64a8;
+  --accent-soft: #e3edf8;
+  --alta: #b23c28;
+  --on-alta: #ffffff;
+  --alta-soft: #fbe8e4;
+  --media: #8f620f;
+  --media-soft: #f7eedb;
+  --baja: #4f6a84;
+  --baja-soft: #e7edf3;
+  --new: #1d734a;
+  --new-soft: #e1f2e9;
+  --mine: #6a3fb0;
+  --mine-soft: #efe8fa;
+  --warn-bg: #fff4d6;
+  --warn-ink: #5f4200;
+  --shadow: rgba(15, 31, 51, .2);
+  --font-ui: "Schibsted Grotesk", "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-read: "Source Serif 4", Cambria, Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", Consolas, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a1420; --surface: #0f1d2d; --ink: #e4ecf5; --muted: #94a6ba; --line: #21344b;
+    --band: #0b2343; --band-ink: #eef3f9; --band-muted: #94acc8; --band-line: #1f3d63; --band-field: #12305a;
+    --accent: #80b1e9; --accent-soft: #16304d;
+    --alta: #ff8c70; --on-alta: #2a0d06; --alta-soft: #3a1d17; --media: #e5b04f; --media-soft: #33280f; --baja: #9cb5cd; --baja-soft: #1a2939;
+    --new: #5fd39a; --new-soft: #10301f; --mine: #c3a5f5; --mine-soft: #2a1f40; --warn-bg: #3a2e0c; --warn-ink: #f3d58a; --shadow: rgba(0, 0, 0, .5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a1420; --surface: #0f1d2d; --ink: #e4ecf5; --muted: #94a6ba; --line: #21344b;
+  --band: #0b2343; --band-ink: #eef3f9; --band-muted: #94acc8; --band-line: #1f3d63; --band-field: #12305a;
+  --accent: #80b1e9; --accent-soft: #16304d;
+  --alta: #ff8c70; --on-alta: #2a0d06; --alta-soft: #3a1d17; --media: #e5b04f; --media-soft: #33280f; --baja: #9cb5cd; --baja-soft: #1a2939;
+  --new: #5fd39a; --new-soft: #10301f; --mine: #c3a5f5; --mine-soft: #2a1f40; --warn-bg: #3a2e0c; --warn-ink: #f3d58a; --shadow: rgba(0, 0, 0, .5);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 15px; line-height: 1.5; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.wrap {
+  max-width: 1320px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.eyebrow { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
+button { font: inherit; }
+
+/* ---------- Brand ---------- */
+.brand-mark { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.logo { width: 44px; height: 44px; flex: none; }
+.logo-text { font-family: var(--font-ui); font-weight: 700; font-size: 15.5px; letter-spacing: -.02em; }
+.brand-name { font-weight: 700; font-size: 20px; letter-spacing: -.01em; line-height: 1.15; }
+.brand-sub { color: var(--band-muted); font-size: 13px; }
+
+/* ---------- Gate ---------- */
+.gate { min-height: 100vh; min-height: 100dvh; background: var(--band); color: var(--band-ink); display: grid; place-items: center; padding-block: 40px; }
+.gate .wrap { width: 100%; display: grid; place-items: center; }
+.gate-panel { width: 100%; max-width: 440px; display: grid; gap: 22px; }
+.gate-card { background: var(--surface); color: var(--ink); border-radius: 10px; padding: 24px; display: grid; gap: 14px; }
+.gate-card h1 { font-size: 22px; font-weight: 600; }
+.gate-card p { margin: 0; color: var(--muted); }
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 500; font-size: 14px; }
+.field-row { display: flex; gap: 8px; }
+.field input { flex: 1; min-width: 0; font: inherit; font-size: 16px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); }
+.check { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink); }
+.check input { width: 16px; height: 16px; accent-color: var(--band); }
+.btn { font-weight: 600; padding: 10px 18px; border-radius: 6px; border: 0; background: var(--band); color: var(--band-ink); cursor: pointer; }
+.btn:hover { filter: brightness(1.15); }
+.error { color: var(--alta); font-size: 14px; min-height: 1.5em; margin: 0; }
+.disclaimer { border: 1px solid var(--band-line); border-radius: 8px; padding: 14px 16px; font-size: 13.5px; color: var(--band-muted); display: grid; gap: 6px; }
+.disclaimer strong { color: var(--band-ink); font-weight: 600; }
+.disclaimer p { margin: 0; }
+
+/* ---------- Header ---------- */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--band); }
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--band); color: var(--band-ink); }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; padding-block: 14px 10px; flex-wrap: wrap; }
+.topbar .brand-name { font-size: 17px; }
+.topbar .logo { width: 36px; height: 36px; }
+.tools { display: flex; align-items: center; justify-content: flex-end; gap: 10px 12px; flex-wrap: wrap; flex: 1 1 auto; color: var(--band-muted); font-size: 13px; }
+.search { position: relative; flex: 1 1 260px; }
+.search input {
+  width: 100%; min-width: 0;
+  font: inherit; font-size: 14px;
+  padding: 7px 34px 7px 12px;
+  border-radius: 6px; border: 1px solid var(--band-line);
+  background: var(--band-field); color: var(--band-ink);
+}
+.search input::placeholder { color: var(--band-muted); }
+.search kbd {
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-mono); font-size: 11px; color: var(--band-muted);
+  border: 1px solid var(--band-line); border-radius: 4px; padding: 0 5px;
+}
+.seg { display: inline-flex; border: 1px solid var(--band-line); border-radius: 6px; overflow: hidden; }
+.seg button { background: transparent; color: var(--band-muted); border: 0; padding: 6px 10px; font-size: 13px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--band-line); }
+.seg button[aria-pressed="true"] { background: var(--band-ink); color: var(--band); font-weight: 600; }
+.today { font-family: var(--font-mono); font-size: 12px; }
+.link-btn { font-size: 13px; background: transparent; color: var(--band-ink); border: 1px solid var(--band-line); border-radius: 6px; padding: 5px 10px; cursor: pointer; }
+.link-btn:hover { background: var(--band-line); }
+.tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex: none; font-size: 14px; font-weight: 500; color: var(--band-muted);
+  border-bottom: 3px solid transparent; padding: 10px 12px 9px;
+  display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+}
+.tab:hover { color: var(--band-ink); }
+.tab[aria-selected="true"] { color: var(--band-ink); border-bottom-color: var(--band-ink); }
+.tab .count { font-family: var(--font-mono); font-size: 11px; padding: 1px 6px; border-radius: 99px; background: var(--band-line); color: var(--band-ink); }
+.tab .count-alta { background: var(--alta); color: var(--on-alta); font-weight: 600; }
+.tab-sep { flex: none; width: 1px; margin: 10px 6px; background: var(--band-line); }
+
+/* ---------- Main ---------- */
+main { padding-block: 28px 48px; }
+.banner {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: var(--warn-bg); color: var(--warn-ink);
+  border-radius: 8px; padding: 12px 14px; margin-bottom: 22px; font-size: 14px;
+}
+.banner b { font-weight: 600; }
+.home-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: start; }
+@media (min-width: 900px) { .home-grid { grid-template-columns: minmax(0, 1fr) 300px; } }
+.main-col { display: grid; gap: 36px; min-width: 0; }
+.section-head { display: grid; gap: 4px; margin-bottom: 14px; }
+.section-head h2 { font-size: 21px; font-weight: 600; letter-spacing: -.01em; }
+.section-head p { margin: 0; color: var(--muted); font-size: 14px; max-width: 80ch; }
+
+.brief { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px 24px; display: grid; gap: 16px; }
+.brief-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; }
+.brief-top .eyebrow { color: var(--muted); }
+.brief-top h2 { font-size: 24px; font-weight: 600; letter-spacing: -.015em; margin-top: 2px; }
+.brief-controls { display: flex; align-items: flex-end; gap: 10px; flex-wrap: wrap; }
+.select-wrap { display: grid; gap: 4px; }
+.select-wrap label { font-size: 12.5px; color: var(--muted); }
+select {
+  font: inherit; font-size: 15px; font-weight: 500;
+  padding: 8px 34px 8px 12px; border: 1px solid var(--line); border-radius: 6px;
+  background-color: var(--bg); color: var(--ink); appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 17px) 55%, calc(100% - 12px) 55%; background-size: 5px 5px; background-repeat: no-repeat;
+  max-width: 100%;
+}
+.ghost-btn {
+  font-size: 13.5px; font-weight: 500;
+  padding: 8px 12px; border-radius: 6px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.ghost-btn:hover { border-color: var(--accent); color: var(--accent); }
+.brief-cols { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px 36px; align-items: start; }
+.points-wrap { display: grid; gap: 10px; }
+.points-wrap .eyebrow { color: var(--muted); }
+.points { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; max-width: 72ch; }
+.points li { display: grid; grid-template-columns: 14px 1fr; gap: 8px; font-size: 15px; font-weight: 500; line-height: 1.45; }
+.points strong, .brief-text strong, .team-brief strong, .team-detail strong { font-weight: 700; color: var(--ink); }
+.points li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-top: 7px; }
+.brief-text { font-family: var(--font-read); font-size: 17px; line-height: 1.6; max-width: 68ch; margin: 0; }
+.brief-foot { display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: center; font-size: 13.5px; color: var(--muted); }
+.mix { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+
+/* ---------- Chips and badges ---------- */
+.rel {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase;
+  padding: 2px 7px; border-radius: 4px; white-space: nowrap; display: inline-flex; align-items: center; gap: 5px;
+}
+.rel::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.rel-alta { color: var(--on-alta); background: var(--alta); font-weight: 600; }
+.rel-media { color: var(--media); background: var(--media-soft); }
+.rel-baja { color: var(--baja); background: var(--baja-soft); }
+.badge { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; padding: 1px 6px; border-radius: 4px; }
+.badge-new { color: var(--new); background: var(--new-soft); }
+.badge-mine { color: var(--mine); background: var(--mine-soft); }
+
+/* ---------- News rows ---------- */
+.news { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.item { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+.item-meta { display: grid; gap: 6px; align-content: start; justify-items: start; }
+.rank { font-family: var(--font-mono); font-size: 22px; font-weight: 500; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; }
+.item time { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.sig { font-size: 12px; color: var(--muted); line-height: 1.3; }
+.item-body { display: grid; gap: 7px; min-width: 0; }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; }
+.item-title { font-size: 17px; font-weight: 600; line-height: 1.35; letter-spacing: -.005em; color: var(--ink); text-decoration: none; text-wrap: pretty; }
+.item-title:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.item-title .ext { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-weight: 400; }
+.item-sum { margin: 0; font-family: var(--font-read); font-size: 15.5px; line-height: 1.55; max-width: 70ch; }
+.angle { margin: 0; font-size: 14px; color: var(--ink); max-width: 70ch; }
+.angle b { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; font-family: var(--font-mono); margin-right: 4px; }
+.item-foot { display: flex; gap: 6px 14px; flex-wrap: wrap; align-items: center; font-size: 13px; color: var(--muted); }
+.src a { color: var(--muted); }
+.src a:hover { color: var(--accent); }
+.stype { font-family: var(--font-mono); font-size: 11px; border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; margin-left: 4px; }
+.tags { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; }
+.tag:hover { color: var(--accent); border-color: var(--accent); }
+.copy-btn { margin-left: auto; font-size: 12.5px; background: transparent; border: 0; color: var(--muted); cursor: pointer; padding: 2px 4px; text-decoration: underline; text-underline-offset: 3px; }
+.copy-btn:hover { color: var(--accent); }
+@media (max-width: 560px) {
+  .item { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .item-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .rank { font-size: 16px; }
+  .copy-btn { margin-left: 0; }
+}
+
+/* Compact view: one line per news item */
+body.compact .item { padding-block: 9px; gap: 12px; }
+body.compact .item-meta { display: flex; align-items: center; gap: 8px; }
+body.compact .rank { font-size: 13px; }
+body.compact .sig, body.compact .item-sum, body.compact .angle, body.compact .tags { display: none; }
+body.compact .item-body { gap: 3px; }
+body.compact .item-title { font-size: 15px; }
+body.compact .item-foot { font-size: 12px; }
+@media (min-width: 561px) { body.compact .item { grid-template-columns: 190px minmax(0, 1fr); } }
+
+.empty { padding: 20px 0; color: var(--muted); font-size: 14px; }
+.empty-box { background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; padding: 22px 24px; color: var(--muted); display: grid; gap: 6px; max-width: 70ch; }
+.empty-box strong { color: var(--ink); }
+
+/* ---------- Aside ---------- */
+aside { display: grid; gap: 28px; }
+.side-block h3, .team-side h3 {
+  font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  padding-bottom: 8px; border-bottom: 1px solid var(--line); margin-bottom: 4px;
+}
+.ind-g { font-size: 12px; font-weight: 600; color: var(--ink); padding-top: 10px; }
+.kv { list-style: none; margin: 0; padding: 0; }
+.kv li { padding-block: 9px; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.kv .k { font-size: 13.5px; }
+.kv .v { font-family: var(--font-mono); font-size: 19px; font-weight: 500; font-variant-numeric: tabular-nums; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.chg { font-size: 12px; font-weight: 500; color: var(--muted); }
+.kv .n { font-size: 12px; color: var(--muted); }
+.kv .n a { color: var(--muted); }
+.agenda { list-style: none; margin: 0; padding: 0; }
+.agenda li { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 10px; padding-block: 9px; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+.agenda .d { font-family: var(--font-mono); font-size: 12px; color: var(--muted); padding-top: 1px; }
+.agenda a { color: var(--ink); text-decoration: none; }
+.agenda a:hover { color: var(--accent); text-decoration: underline; }
+.legend { list-style: none; margin: 0; padding: 8px 0 0; display: grid; gap: 10px; }
+.legend li { display: grid; gap: 4px; font-size: 13.5px; color: var(--muted); }
+.legend li .rel { justify-self: start; }
+.side-note { font-size: 13.5px; color: var(--muted); margin: 8px 0 0; }
+
+/* ---------- Team, list and archive views ---------- */
+.view-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; margin-bottom: 18px; }
+.view-head .eyebrow { color: var(--muted); }
+.view-head h2 { font-size: 26px; font-weight: 600; letter-spacing: -.015em; margin-top: 2px; }
+.view-head p { margin: 4px 0 0; color: var(--muted); font-size: 14px; max-width: 75ch; }
+.filters-wrap { display: grid; gap: 8px; margin-bottom: 14px; }
+.filters { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.filters .lbl { font-size: 12.5px; color: var(--muted); margin-right: 4px; min-width: 64px; }
+.filter { font-size: 13px; font-weight: 500; padding: 5px 11px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+.filter .c { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+.filter[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.filter[aria-pressed="true"] .c { color: var(--bg); opacity: .75; }
+.team-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
+.team-side { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; display: grid; gap: 14px; align-content: start; }
+.side-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.detail-btn[aria-expanded="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.gmail-link { font-size: 13.5px; font-weight: 500; color: var(--accent); }
+.team-detail { display: grid; gap: 12px; border-top: 1px solid var(--line); padding-top: 14px; }
+.team-detail p { margin: 0; font-family: var(--font-read); font-size: 16px; line-height: 1.65; max-width: 78ch; }
+.team-grid.expanded { grid-template-columns: minmax(0, 1fr) !important; }
+.team-grid.expanded .team-side { order: 0; position: static; max-height: none; overflow: visible; }
+.team-brief { font-family: var(--font-read); font-size: 16px; line-height: 1.6; max-width: 70ch; margin: 0; color: var(--ink); }
+.mine-form { display: flex; gap: 8px; flex-wrap: wrap; max-width: 560px; }
+.mine-form input { flex: 1 1 240px; min-width: 0; font: inherit; font-size: 15px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); }
+.names { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0 20px; }
+.name-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; padding: 4px 6px 4px 10px; border-radius: 99px; background: var(--mine-soft); color: var(--mine); }
+.name-chip button { border: 0; background: transparent; color: inherit; cursor: pointer; font-size: 15px; line-height: 1; padding: 0 4px; }
+.sub-h { font-size: 15px; font-weight: 600; margin: 26px 0 10px; }
+
+/* ---------- Toast and copy fallback ---------- */
+.toast {
+  position: fixed; left: 50%; transform: translateX(-50%);
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  background: var(--ink); color: var(--bg);
+  padding: 10px 16px; border-radius: 8px; font-size: 14px; z-index: 20;
+  box-shadow: 0 6px 24px var(--shadow); max-width: calc(100% - 32px);
+}
+.copy-panel {
+  position: fixed; z-index: 21;
+  left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  max-width: 640px; margin: 0 auto;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px; display: grid; gap: 10px; box-shadow: 0 10px 40px var(--shadow);
+}
+.copy-panel p { margin: 0; font-size: 14px; }
+.copy-panel textarea { width: 100%; min-height: 160px; font-family: var(--font-mono); font-size: 12.5px; padding: 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); resize: vertical; }
+.copy-panel .row { display: flex; justify-content: flex-end; }
+
+footer { border-top: 1px solid var(--line); padding-block: 20px 32px; color: var(--muted); font-size: 13px; }
+footer p { margin: 0 0 6px; max-width: 90ch; }
+footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; }
+
+/* ---------- Desktop ---------- */
+@media (min-width: 1100px) {
+  body { font-size: 15.5px; }
+  main { padding-block: 32px 56px; }
+  .search { flex: 0 1 340px; }
+  .home-grid { grid-template-columns: minmax(0, 1fr) 340px; gap: 48px; }
+  .team-grid { grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; }
+  .team-side { order: 2; }
+  .team-grid.expanded .team-side { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); column-gap: 40px; align-items: start; }
+  .team-grid.expanded .team-side > * { grid-column: 1; }
+  .team-grid.expanded .team-side > .team-detail { grid-column: 2; grid-row: 1 / span 6; border-top: 0; padding-top: 0; border-left: 1px solid var(--line); padding-left: 36px; }
+  .home-side, .team-side {
+    position: sticky;
+    top: calc(env(safe-area-inset-top, 0px) + var(--header-h, 120px) + 24px);
+    max-height: calc(100vh - var(--header-h, 120px) - 48px);
+    overflow-y: auto; scrollbar-width: thin;
+  }
+  .brief { padding: 26px 30px; }
+  .brief-cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
+  .item { grid-template-columns: 104px minmax(0, 1fr); gap: 20px; padding-block: 20px; }
+  .item-title { font-size: 18px; }
+  .item-sum { font-size: 16px; }
+  .tab { padding-inline: 8px; font-size: 13.5px; gap: 5px; }
+  .tab-sep { margin-inline: 4px; }
+}
+@media (min-width: 1100px) and (max-width: 1365px) {
+  .tab { font-size: 13px; padding-inline: 7px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .view-enter { animation: rise .22s ease-out; }
+  @keyframes rise { from { opacity: .4; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+}
+</style>
+</head>
+<body>
+<!-- ================= GATE ================= -->
+<div class="gate" id="gate">
+  <div class="wrap">
+    <div class="gate-panel">
+      <div class="brand-mark">
+        <svg class="logo" viewBox="0 0 44 44" role="img" aria-label="PMI">
+          <rect width="44" height="44" rx="9" fill="currentColor"/>
+          <text class="logo-text" x="22" y="26.5" text-anchor="middle" fill="var(--band)">PMI</text>
+          <rect x="11" y="31" width="10" height="2.6" rx="1.3" fill="var(--band)" fill-opacity=".5"/>
+          <rect x="23" y="31" width="10" height="2.6" rx="1.3" fill="var(--band)"/>
+        </svg>
+        <div>
+          <div class="brand-name">Portfolio Monitoring Iberia</div>
+          <div class="brand-sub">Noticias para el seguimiento de operaciones</div>
+        </div>
+      </div>
+
+      <form class="gate-card" id="gate-form" novalidate>
+        <h1>Acceso del equipo</h1>
+        <p>Introduce la contraseña compartida para ver el resumen del día.</p>
+        <div class="field">
+          <label for="pw">Contraseña</label>
+          <div class="field-row">
+            <input id="pw" name="pw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required>
+            <button class="btn" type="submit">Entrar</button>
+          </div>
+        </div>
+        <label class="check" for="remember"><input type="checkbox" id="remember"> Recordar en este equipo</label>
+        <p class="error" id="pw-error" role="alert"></p>
+      </form>
+
+      <div class="disclaimer" role="note">
+        <strong>Aviso</strong>
+        <p>Esta página no es una página web oficial del BBVA. Sirve meramente como página informativa: recoge y resume noticias públicas de terceros, cada una enlazada a su fuente original.</p>
+        <p>No contiene información interna ni confidencial y no constituye asesoramiento.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= APP ================= -->
+<div id="app" hidden>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand-mark">
+          <svg class="logo" viewBox="0 0 44 44" role="img" aria-label="PMI">
+            <rect width="44" height="44" rx="9" fill="currentColor"/>
+            <text class="logo-text" x="22" y="26.5" text-anchor="middle" fill="var(--band)">PMI</text>
+            <rect x="11" y="31" width="10" height="2.6" rx="1.3" fill="var(--band)" fill-opacity=".5"/>
+            <rect x="23" y="31" width="10" height="2.6" rx="1.3" fill="var(--band)"/>
+          </svg>
+          <div>
+            <div class="brand-name">Portfolio Monitoring Iberia</div>
+          </div>
+        </div>
+        <div class="tools">
+          <div class="search" role="search">
+            <label class="sr-only" for="q">Buscar noticias</label>
+            <input id="q" type="search" placeholder="Buscar empresa, sponsor o tema" autocomplete="off">
+            <kbd aria-hidden="true">/</kbd>
+          </div>
+          <div class="seg" role="group" aria-label="Vista de las noticias">
+            <button type="button" id="v-det" aria-pressed="true">Detallada</button>
+            <button type="button" id="v-cmp" aria-pressed="false">Compacta</button>
+          </div>
+          <span class="today" id="today"></span>
+          <button class="link-btn" type="button" id="logout">Salir</button>
+        </div>
+      </div>
+      <nav class="tabs" id="tabs" role="tablist" aria-label="Secciones"></nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="main"></main>
+
+  <footer>
+    <div class="wrap">
+      <p>Esta página no es una página web oficial del BBVA y sirve meramente como página informativa. Los resúmenes son propios y cada noticia enlaza a su fuente pública original; la relevancia es una valoración orientativa para el seguimiento de operaciones. Ámbito: España y Portugal.</p>
+      <p id="updated"></p>
+      <p>Se actualiza automáticamente cada día hacia las 8:30 (hora peninsular).</p>
+      <p>Atajos de teclado: <kbd>1</kbd>–<kbd>9</kbd> y <kbd>0</kbd> secciones · <kbd>/</kbd> buscar · <kbd>C</kbd> vista compacta · <kbd>Esc</kbd> borrar la búsqueda.</p>
+    </div>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<div class="copy-panel" id="copy-panel" role="dialog" aria-labelledby="copy-msg" hidden>
+  <p id="copy-msg">No se ha podido copiar automáticamente. El texto ya está seleccionado: pulsa Ctrl+C y pégalo en un correo de Gmail.</p>
+  <label class="sr-only" for="copy-text">Texto para copiar</label>
+  <textarea id="copy-text" readonly></textarea>
+  <div class="row"><button class="ghost-btn" type="button" id="copy-close">Cerrar</button></div>
+</div>
+
+<script type="application/json" id="news-data">
+{"updated":"2026-11-04","updatedLabel":"Actualizado el miércoles 4 de noviembre de 2026, 19:00 (hora peninsular)","summaries":{"ALL":{"text":"Jornada centrada en la temporada de resultados. **Sacyr** gana 116 M€ hasta septiembre (+87%) apoyada en sus concesiones, **Cirsa** reduce su apalancamiento a 2,7 veces antes de su absorción por **Lottomatica**, e **Iberdrola**, **Endesa**, **Naturgy** y **Repsol** suman 14.542 M€ (+47%), con una parte no recurrente. En Portugal, **Galp** bate su récord trimestral tras romper las negociaciones con **Moeve**. En promoción residencial, **Metrovacesa** tiene vendidas ya el 96% de sus entregas de 2026, mientras los decretos de vivienda frenan el alquiler.","points":["Separar el efecto no recurrente (inventarios y plusvalías) en los resultados de **Repsol** e **Iberdrola** antes de extrapolar ratios.","Exportadores con ventas a EE. UU. (aceite, perfumes, baldosas, piedra y confitería): alegaciones a los aranceles hasta mediados de diciembre.","Próximos resultados: **Cellnex** (5 nov), **Amadeus** (6 nov), **Telefónica** (12 nov) y **Merlin Properties** (13 nov)."]},"ENE":{"text":"**Repsol** gana 5.006 M€ hasta septiembre, con 943 M€ de efecto inventario, y **Galp** bate su récord trimestral tras romper las negociaciones con **Moeve**. **Renovalia** coloca 200 M€ en bonos privados con **Allianz GI** para una cartera merchant a 25 años. **Iberdrola**, **Endesa** y **Naturgy** mejoran beneficio hasta septiembre y **Enagás** completa la compra del 31,5% de **Teréga**.","points":["**Repsol** y **Galp**: beneficios muy ligados al refino; separar el efecto inventario y vigilar la normalización de márgenes.","**Renovalia**: referencia de financiación merchant a largo plazo con inversores institucionales.","Riesgo regulatorio: posible nuevo tope al gas y mercado de capacidad pendiente de subastas."],"detail":["**Renovalia** ha cerrado una emisión privada de bonos de hasta 200 M€, suscrita por fondos de **Allianz Global Investors**, para financiar proyectos eólicos y fotovoltaicos en desarrollo sin PPA. Los plazos llegan a 25 años en fotovoltaica y 21 en eólica, algo poco habitual en España: la banca está exigiendo más coberturas y acortando plazos por la caída de los precios capturados, y los inversores institucionales ganan terreno en el segmento merchant.","**Repsol** gana 5.006 M€ hasta septiembre, de los que 943 M€ proceden de la revalorización de inventarios, mantiene 11.922 M€ de liquidez (4,14 veces sus vencimientos a corto) y lanza una tercera recompra de 950 M€. **Galp** gana 682 M€ en el tercer trimestre (+68%) con un margen de refino de 33,8 $/barril y eleva su objetivo de EBITDA 2026 a cerca de 5.000 M€; sus negociaciones con **Moeve** para unir refino y comercialización han terminado sin acuerdo.","Resultados de las grandes eléctricas hasta septiembre: **Iberdrola** gana 5.816 M€ (+9,6%), con plusvalías de la venta en México; **Endesa**, 1.962 M€ (+15%); y **Naturgy**, 1.758 M€ (+5,4%). En proyectos donde actúan como sponsors u offtakers conviene separar el componente no recurrente.","**Enagás** obtiene 204 M€ de beneficio, apoyado en la venta del 40% de Enagás Renovable, y completa la compra del 31,5% de **Teréga** por 573 M€. Más del 80% de su deuda es a tipo fijo, con un coste del 2,1% y una vida media de 3,9 años.","El mercado de capacidad aprobado en septiembre ofrecerá contratos de hasta 15 años a baterías nuevas, con coeficientes de firmeza que se fijarán en cada subasta. El TTF supera los 90 €/MWh y el Gobierno estudia recuperar el tope al gas, al que se oponen las grandes eléctricas. En Portugal, el BEI suma un tercer tramo de 300 M€ para las redes de distribución de **EDP**, de los que 213 M€ van a Portugal."]},"INF":{"text":"**Ferrovial** eleva un 21,8% su EBITDA ajustado y busca socios para su campus de centros de datos en Alcobendas. **Aena** gana 1.774,7 M€ hasta septiembre con el DORA III ya aprobado y tarifas cerradas hasta 2031. En Portugal, **Mota-Engil** y **DST** compiten por la segunda PPP de la alta velocidad Porto-Lisboa.","points":["**Aena**: deuda neta de 5.845 M€ (1,47x EBITDA) y tarifas cerradas hasta 2031.","**Ferrovial**: la 407 ETR aprueba un dividendo de 1.050 M C$ y el grupo recibe 524 M€ de dividendos de proyectos.","**Mota-Engil** y **DST**: compiten por el tramo Oiã-Soure (PPP2) de la alta velocidad Porto-Lisboa."],"detail":["**Ferrovial** eleva su EBITDA ajustado un 21,8% en términos comparables, con un crecimiento del 14,7% en autopistas. La **407 ETR** aprueba un dividendo de 1.050 M C$ y el grupo recibe 524 M€ de dividendos de proyectos, con una caja neta de 1.700 M€ excluidos los proyectos.","En España, **Ferrovial** busca socios para su campus de centros de datos de Alcobendas, con una inversión estimada de unos 1.000 M€ por fases, según la disponibilidad de energía y la contratación de clientes, combinando capital de terceros y deuda.","**Aena** gana 1.774,7 M€ hasta septiembre (+12,4%), con 257,2 millones de pasajeros en la red española (+4,1%). El DORA III 2027-2031, aprobado en septiembre, fija una subida tarifaria del 0,33% anual y 9.991 M€ de inversión regulada. Su deuda neta es de 5.845 M€, 1,47 veces el EBITDA.","En Portugal, los consorcios liderados por **Mota-Engil** y **DST** compiten por el tramo Oiã-Soure (PPP2) de la alta velocidad Porto-Lisboa. Fitch sube el rating de Portugal a A+ con perspectiva estable, un apoyo para la financiación de concesiones con contraparte pública portuguesa."]},"RE":{"text":"**Metrovacesa** ingresa 465 M€ hasta septiembre (+75%) y tiene vendidas el 96% de sus entregas de 2026 y el 83% de las de 2027, con un LTV del 10,6%. Los decretos de vivienda han retirado más de 4.200 pisos del alquiler en diez días, lo que afecta a las tesis build-to-rent. **Ferrovial** busca socios para su campus de centros de datos en Alcobendas.","points":["**Metrovacesa**: dividendo extraordinario de 1 € por acción (unos 152 M€) que votará la junta del 24 de noviembre.","Build-to-rent: revisar hipótesis de renta, ocupación y salida ante los decretos de vivienda.","**Merlin Properties** presenta resultados el 13 de noviembre."],"detail":["**Metrovacesa** ingresa 465 M€ hasta septiembre (+75%), con 1.172 entregas (+44%) a un precio medio de 350.000 € y un margen bruto del 27,4%. Su cartera de preventas suma 2.851 viviendas por 1.052 M€ y cubre el 96% de las entregas previstas para 2026, el 83% de las de 2027 y el 45% de las de 2028. La deuda neta es de 227 M€ (LTV del 10,6%) y propone un dividendo extraordinario de 1 € por acción, unos 152 M€, que votará la junta del 24 de noviembre.","Según la FAI, los decretos de vivienda aprobados en octubre han provocado la retirada o el desvío de 4.235 pisos del alquiler habitual y el bloqueo de 1.523 firmas en diez días, con una caída prevista del 25-30% en contratos. En promociones build-to-rent conviene revisar renta, ocupación y salida, y el posible trasvase a venta.","**Ferrovial** busca socios para financiar su campus de centros de datos de Alcobendas, de unos 1.000 M€, que desarrollará por fases según la disponibilidad de energía y la contratación de clientes. El BEI presta 495 M€ al **Institut Català de Finances** para 5.000 viviendas públicas en Cataluña, con riesgo de retrasos por licencias y litigios.","En el conjunto del mercado, la inversión inmobiliaria acumula 13.310 M€ hasta septiembre (+22,7%), aunque el tercer trimestre se enfría y la rentabilidad prime logística sube 15 pb, hasta el 5,00%."]},"COR":{"text":"**Sacyr** gana 116 M€ hasta septiembre (+87%) apoyada en sus concesiones y suma el grado de inversión de S&P. **Indra** gana 355 M€ (+22%) con una cartera récord de 22.165 M€ y presentará plan estratégico en noviembre. Para los exportadores, EE. UU. estudia aranceles por unos 2.800 M€ sobre aceite, perfumes, baldosas, piedra y confitería. Próximos resultados: **Cellnex** (5 nov) y **Telefónica** (12 nov).","points":["**Sacyr**: seguir las distribuciones de las concesiones frente a la deuda con recurso tras el BBB- de S&P.","**Indra**: cartera de 22.165 M€ (+133%) y nuevo plan estratégico en noviembre.","Exportadores con ventas a EE. UU.: aranceles propuestos por unos 2.800 M€, con alegaciones hasta mediados de diciembre."],"detail":["**Sacyr** cierra los nueve meses con un beneficio de 116 M€ (+87%), ingresos un 11% mayores y un flujo de caja operativo un 21% superior. **Sacyr Concesiones** ingresa 1.536 M€ (+21%) y el valor de su cartera concesional es de 4.316 M€. En 2026 ha sumado la Ruta 57 (Chile) y el Museo de Ciencias de Ontario, y destaca la calificación BBB- con perspectiva estable de S&P, que se suma a la de Morningstar DBRS.","**Indra** gana 355 M€ (+22%) con ingresos de 4.645 M€ (+29%) y una cartera de 22.165 M€ (+133%), impulsada por defensa y espacio. Presentará un nuevo plan estratégico en noviembre, que conviene seguir por sus necesidades de inversión y de financiación.","**Ferrovial** eleva su EBITDA ajustado un 21,8% en términos comparables y recibe 524 M€ de dividendos de proyectos, con una caja neta de 1.700 M€ excluidos los proyectos.","En comercio exterior, EE. UU. estudia aranceles por unos 2.800 M€ sobre aceite, perfumes, baldosas, piedra y confitería españoles, con alegaciones hasta mediados de diciembre y un Gobierno previsiblemente en funciones tras las elecciones del 29 de noviembre.","El gas TTF supera los 90 €/MWh por primera vez desde 2022, lo que encarece la energía de la industria intensiva, y el Gobierno estudia recuperar el tope al gas."]},"STF":{"text":"Jornada sin novedades relevantes en las compañías del equipo. En comercio exterior, EE. UU. estudia aranceles por unos 2.800 M€ sobre aceite, perfumes, baldosas, piedra y confitería españoles, con alegaciones hasta mediados de diciembre. El gas TTF supera los 90 €/MWh y el Gobierno estudia recuperar el tope al gas.","points":["Exportadores agroalimentarios y cerámicos: revisar la exposición a EE. UU. en líneas de circulante.","Aranceles: plazo de alegaciones hasta mediados de diciembre, con un Gobierno previsiblemente en funciones tras el 29 de noviembre.","Gas por encima de 90 €/MWh: vigilar costes de clientes intensivos en energía."],"detail":["EE. UU. estudia aranceles por unos 2.800 M€ en cinco categorías de productos españoles (aceite de oliva, perfumes, baldosas, piedra y confitería) como respuesta al veto español al atraque de buques con armas para Israel. Afecta directamente a exportadores con ventas a EE. UU. financiadas con líneas de circulante y comercio exterior.","El plazo de alegaciones cierra a mediados de diciembre, previsiblemente con un Gobierno en funciones tras las elecciones del 29 de noviembre, lo que puede retrasar cualquier negociación.","El gas TTF supera los 90 €/MWh por primera vez desde 2022 y queda a unos 6 €/MWh del nivel que activó el mecanismo ibérico. El Gobierno estudia recuperar el tope al gas, lo que afectaría a los costes de clientes intensivos en energía."]},"LBO":{"text":"**Cirsa** gana 128 M€ hasta septiembre (+74%) y deja su apalancamiento en 2,7 veces ebitda antes de su absorción por **Lottomatica**. En el mid-market, **Standard Investment** entra en **GasExpress**, **Nazca** cierra la venta de **Teltronic** a **Amper** y **MCH** lidera una ampliación de 300 M€ en **Europastry**, con **COFIDES** como coinversor.","points":["**Cirsa**: deuda neta de 2.104 M€ (2,7x ebitda); la absorción por **Lottomatica** implica cambio de control.","**Europastry**: ampliación de 300 M€ para crecer en Estados Unidos.","**Teltronic**: salida de **Nazca** en algo más de un año, referencia de múltiplos en defensa."],"detail":["**Cirsa** gana 128,3 M€ en los nueve primeros meses (+73,6%), con ingresos de 1.887 M€ (+10%) y ebitda de 591 M€ (+7,8%). La deuda financiera neta cierra septiembre en 2.104 M€, 2,7 veces ebitda. La compañía será absorbida por **Lottomatica** en una fusión transfronteriza que se votará a finales de noviembre y cuyo cierre se prevé en el segundo trimestre de 2027: conviene revisar las cláusulas de cambio de control de su deuda.","**Europastry** completa una ampliación de capital de 300 M€ liderada por **MCH**, en la que **COFIDES** invierte 49,6 M€, para financiar su crecimiento en Estados Unidos.","**Nazca** cierra la venta de **Teltronic** a **Amper**, una operación anunciada en mayo y valorada en hasta 225 M€. **Nazca** había comprado **Teltronic** a **Hytera** en julio de 2025 con su fondo de defensa y entra ahora en el capital de **Amper**.","El fondo neerlandés **Standard Investment** toma una participación en la valenciana **GasExpress**, que explota más de 50 estaciones de servicio automáticas de bajo coste en España.","Para las participadas exportadoras, la propuesta de aranceles de EE. UU. sobre aceite, perfumes, baldosas, piedra y confitería es el principal riesgo comercial de las próximas semanas.","En almacenamiento, **Grenergy** firmó en julio la primera financiación sin recurso de una batería stand-alone en España (Oviedo, 618 MWh) con **Santander** y **SMBC**, apoyada en un acuerdo de tolling financiero; el mercado de capacidad aprobado en septiembre ofrecerá contratos de hasta 15 años a baterías nuevas."]},"SPK":{"text":"En venture debt, **Impress** firma 40 M€ con el **BEI** para crecer en el norte de Europa y **Crescenta** obtiene una línea de deuda de fondos de **BlackRock**. En capital, **BY Venture Partners** cierra un fondo de 60 M$ con base en Lisboa para la península, y las rondas semilla de **Artiso**, **Talky Labs**, **YK-Robotics** y **Granter** mantienen el pulso de la inversión temprana. Como referencia, **BBVA Spark** supera ya los 1.000 M€ de financiación comprometida.","points":["**Impress**: 40 M€ de venture debt del **BEI** tras 278 M€ captados en capital; referencia de tamaño para deuda de crecimiento.","Más financiadores activos en deuda y capital para startups: **BEI**, fondos de **BlackRock**, **Inveready**, **Criteria Venture Tech** y **BStartup** (**Banco Sabadell**).","Nuevo capital para rondas tempranas en Iberia (**BY Venture Partners**, 60 M$): más opciones para reforzar fondos propios antes de amortizar deuda."],"detail":["**Impress**, cadena de ortodoncia invisible con más de 110 clínicas en 10 países, firma un préstamo de 40 M€ del **BEI** en formato venture debt. Lo destinará a su plataforma de IA y a crecer en Alemania, Países Bajos y Reino Unido. La compañía ha captado 278 M€ en cuatro rondas de capital, así que la deuda llega sobre una base de fondos propios amplia, aunque con la expansión aún consumiendo caja.","**Crescenta**, gestora digital de fondos de private equity, obtiene una línea de financiación de fondos y cuentas gestionados por **BlackRock**. Con ella suma hasta 9 M€ en capital y deuda en seis meses, tras la ronda de abril en la que repitieron **Kfund**, **FJ Labs** y **Acurio Ventures** y entró **Endeavor Catalyst**. Es la secuencia típica del venture debt: primero la ronda, después la deuda para alargar la caja sin diluir.","En el lado de los fondos, **BY Venture Partners** cierra su Fund III con 60 M$ para startups de IA desde pre-seed hasta Serie A, con tickets de hasta 1 M$, y abrirá en Lisboa su centro para España y Portugal. **Inveready**, activo también en venture debt, cierra en un mes un vehículo de search funds de 20 M€ para comprar pymes rentables.","Las rondas semilla de la semana: **Artiso** (Barcelona) levanta más de 3 M€ en una pre-seed liderada por **Criteria Venture Tech**; **Talky Labs**, 1,5 M€; y **YK-Robotics**, 1 M€ con **Draper B1**, **First Drop** y **BStartup**. En Portugal, **Granter** capta 1,6 M€ con dinero del programa de capital riesgo del **Banco Português de Fomento** y prepara su entrada en España.","Como contexto, **BBVA Spark** superó a finales de septiembre los 1.000 M€ de financiación comprometida y los 1.800 clientes en cinco geografías, tras firmar más de 30 operaciones en 2025, y recibió el premio Endeavor España al compromiso corporativo con el emprendimiento."]}},"indicators":[{"group":"Tipos","label":"Facilidad de depósito BCE","value":"2,50%","change":"sin cambios","dir":"flat","note":"Reunión del 29 oct","url":"https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp261029~9a493adf17.es.html","source":"BCE"},{"group":"Tipos","label":"Euríbor 12M · media de octubre","value":"3,239%","change":"0,008 pp vs septiembre","dir":"down","note":"Septiembre: 3,247%","url":"https://www.gibobs.com/blog/euribor/","source":"Gibobs"},{"group":"Tipos","label":"Bono español a 10 años","value":"3,930%","change":"3,2 pb","dir":"up","note":"Cierre del 3 nov · prima de riesgo: 60 pb","url":"https://www.economiaresponsablefinanzas.com/inversiones/mercados/mercados-hoy-3-noviembre-2026/","source":"Economía Responsable"},{"group":"Energía y materias primas","label":"Pool eléctrico (OMIE) · media diaria","value":"246,01 €/MWh","change":"31,9% vs 3 nov","dir":"up","note":"4 nov · hora más cara 18-19 h","url":"https://tarifaluzhora.es/precio-luz-diario/2026-11-04","source":"Tarifaluzhora (datos OMIE)"},{"group":"Energía y materias primas","label":"Gas TTF","value":"> 90 €/MWh","change":"máximo desde 2022","dir":"up","note":"Dato del 23 oct","url":"https://www.elespanol.com/invertia/empresas/energia/20261023/alerta-mercado-nuevo-tope-gas-precio-ttf-solo-euros-nivel-activo-mecanismo-iberico/1003744431545_0.html","source":"El Español"},{"group":"Energía y materias primas","label":"Brent","value":"103,60 $","change":"1,1%","dir":"down","note":"Cierre del 3 nov, tras caer un 7,6% el 2 nov","url":"https://www.economiaresponsablefinanzas.com/inversiones/mercados/mercados-hoy-3-noviembre-2026/","source":"Economía Responsable"},{"group":"Mercados","label":"Ibex 35","value":"+2%","change":"sesión del 4 nov","dir":"up","note":"Cerró el 3 nov en 18.807,2 (−0,79%)","url":"https://es.finance.yahoo.com/noticias/ibex-35-alza-victoria-dem%C3%B3crata-094803994.html","source":"Investing.com"},{"group":"Mercados","label":"Euro / dólar","value":"1,1187","change":"0,06%","dir":"up","note":"Cierre del 3 nov","url":"https://www.economiaresponsablefinanzas.com/inversiones/mercados/mercados-hoy-3-noviembre-2026/","source":"Economía Responsable"}],"agenda":[{"date":"5 nov","text":"Cellnex: resultados del tercer trimestre","url":"https://ad-hoc-news.de/boerse/news/corporate-news/cellnex-stock-enters-q3-results-week-after-fitch-rating-reaffirmed/70455441"},{"date":"6 nov","text":"Amadeus: resultados del tercer trimestre","url":"https://es.investing.com/news/global-filings/amadeus-comunica-la-fecha-de-sus-resultados-del-t3-2026-6-de-noviembre-93CH-3871484"},{"date":"12 nov","text":"Telefónica: resultados enero-septiembre","url":"https://aiacciones.es/calendario/index.html"},{"date":"13 nov","text":"Merlin Properties: resultados 9M","url":"https://ir.merlinproperties.com/inversores/calendario/"},{"date":"24 nov","text":"Metrovacesa: junta extraordinaria (dividendo de 1 €)","url":"https://www.bolsamania.com/noticias/resultados-anuncios/metrovacesa-eleva-ingresos-septiembre-75-dividendo-1-euro-diciembre--23903423.html"},{"date":"fin nov","text":"Lottomatica: junta para aprobar la absorción de Cirsa","url":"https://focusgn.com/latinoamerica/lottomatica-cirsa-proyecto-fusion"},{"date":"29 nov","text":"Elecciones generales en España","url":"https://www.moncloa.com/2026/10/16/aranceles-eeuu-espana-exportaciones-3449641/"},{"date":"16-17 dic","text":"Reunión de política monetaria del BCE","url":"https://www.gibobs.com/blog/euribor/"}],"items":[{"id":"sacyr-9m","date":"2026-11-03","source":"elEconomista","url":"https://www.eleconomista.es/infraestructuras-servicios/noticias/14025381/11/26/sacyr-dispara-su-beneficio-un-87-hasta-los-116-millones-gracias-al-impulso-de-las-concesiones.html","title":"Sacyr gana 116 M€ hasta septiembre (+87%) apoyada en su negocio concesional","summary":"La cifra de negocios crece un 11%, el EBITDA un 9% y el flujo de caja operativo un 21%. Suma dos concesiones en 2026, la Ruta 57 en Chile y el Museo de Ciencias de Ontario, y el valor de su cartera concesional se sitúa en 4.316 M€.","angle":"Sacyr Concesiones ingresa 1.536 M€ (+21%): seguir las distribuciones de las concesiones frente a la deuda con recurso.","rel":{"COR":"alta"},"sourceType":"prensa","signal":"resultados"},{"id":"repsol-3t","date":"2026-10-29","source":"Repsol","url":"https://www.repsol.com/es/sala-prensa/notas-prensa/2026/repsol-redobla-compromiso-espana-11500-millones-proyectos-hasta-2030/index.cshtml","title":"Repsol gana 5.006 M€ hasta septiembre y lanza una tercera recompra de 950 M€","summary":"El resultado incluye 943 M€ por revalorización de inventarios; el ajustado es de 5.419 M€. Prevé 11.500 M€ en proyectos en España hasta 2030, el 60% junto a sus grandes centros industriales.","angle":"Liquidez de 11.922 M€, equivalente a 4,14 veces sus vencimientos de deuda a corto plazo.","rel":{"ENE":"alta"},"sourceType":"primaria","signal":"resultados"},{"id":"renovalia-bonos","date":"2026-10-28","source":"El Periódico de la Energía","url":"https://elperiodicodelaenergia.com/renovalia-firma-una-financiacion-de-200-millones-de-euros-para-su-cartera-eolica-y-fotovoltaica-en-desarrollo-en-espana","title":"Renovalia coloca 200 M€ en bonos privados con Allianz GI para una cartera merchant","summary":"Emisión privada a hasta 25 años en fotovoltaica y 21 en eólica para proyectos en desarrollo sin PPA, con la opción de incorporarlos más adelante. El artículo señala que la banca exige más coberturas y acorta plazos por la caída de los precios capturados.","angle":"Inversores institucionales compiten con la banca en plazo y en apetito por riesgo merchant.","rel":{"ENE":"alta"},"sourceType":"sectorial","signal":"liquidez"},{"id":"aranceles-eeuu","date":"2026-10-16","source":"Moncloa.com","url":"https://www.moncloa.com/2026/10/16/aranceles-eeuu-espana-exportaciones-3449641/","title":"EE. UU. estudia aranceles a España por unos 2.800 M€ en aceite, perfumes y baldosas","summary":"La medida responde al veto español al atraque de buques con armas para Israel y afecta a cinco categorías, incluidas piedra y confitería. El plazo de alegaciones cierra a mediados de diciembre, previsiblemente con un Gobierno en funciones tras el 29 de noviembre.","angle":"Exportadores agroalimentarios y cerámicos con financiación de circulante o de exportación.","rel":{"STF":"alta","COR":"alta","LBO":"media"},"sourceType":"prensa","signal":"regulatorio"},{"id":"decretos-vivienda","date":"2026-10-13","source":"The Objective","url":"https://theobjective.com/economia/2026-10-13/decretos-viviendas-5-758-operaciones/","title":"Los decretos de vivienda retiran 4.235 pisos del alquiler en diez días, según la FAI","summary":"La federación suma 5.758 operaciones afectadas entre retiradas y firmas bloqueadas, y prevé una caída del 25-30% de los contratos de alquiler en las próximas semanas, con trasvase de pisos a la venta.","angle":"Hipótesis de renta, ocupación y salida en promociones build-to-rent financiadas.","rel":{"RE":"alta"},"sourceType":"prensa","signal":"regulatorio"},{"id":"europastry-mch","date":"2026-11-04","source":"Webcapitalriesgo","url":"https://www.webcapitalriesgo.com/cofides-invierte-e496m-en-europastry-en-una-ampliacion-de-e300m-liderada-por-mch-para-su-crecimiento-en-estados-unidos/","title":"COFIDES invierte 49,6 M€ en Europastry en una ampliación de 300 M€ liderada por MCH","summary":"Los fondos se destinan al crecimiento de la panificadora en Estados Unidos.","angle":"Expansión internacional financiada con capital en una participada de private equity.","rel":{"LBO":"media"},"sourceType":"sectorial","signal":"liquidez"},{"id":"bei-icf","date":"2026-11-03","source":"Moncloa.com","url":"https://www.moncloa.com/2026/11/03/vivienda-publica-cataluna-bei-icf-3461129/","title":"El BEI presta 495 M€ al ICF para 5.000 viviendas públicas en Cataluña","summary":"La operación combina obra nueva y rehabilitación y se apoya en suelo público ya disponible. El artículo advierte del riesgo de retrasos por licencias y litigios urbanísticos.","angle":"Plazos de ejecución en promoción asequible con participación pública.","rel":{"RE":"baja"},"sourceType":"prensa","signal":"liquidez"},{"id":"feijoo-credito","date":"2026-11-03","source":"PressDigital","url":"https://www.pressdigital.es/articulo/economia/2026-11-03/6075841-feijoo-abordara-banca-condiciones-crediticias-construir-millon-viviendas-espana","title":"Feijóo plantea negociar con la banca el crédito promotor para un millón de viviendas","summary":"El presidente del PP anunció que se sentará con las entidades para abordar las condiciones del crédito promotor y del hipotecario, con el objetivo de construir un millón de viviendas.","angle":"Posibles cambios en el marco del crédito promotor tras las elecciones del 29 de noviembre.","rel":{"RE":"baja"},"sourceType":"prensa","signal":"regulatorio"},{"id":"gasexpress","date":"2026-10-29","source":"Webcapitalriesgo","url":"https://www.webcapitalriesgo.com/standard-investment-entra-en-la-valenciana-gasexpress/","title":"Standard Investment entra en GasExpress, red valenciana de gasolineras automáticas","summary":"El fondo neerlandés toma una participación en la compañía valenciana, que explota más de 50 estaciones de servicio de bajo coste en España.","angle":"Sensibilidad de márgenes de combustible con el Brent por encima de 100 $.","rel":{"LBO":"media"},"sourceType":"sectorial","signal":"mna"},{"id":"teltronic-cierre","date":"2026-11-03","source":"Webcapitalriesgo","url":"https://www.webcapitalriesgo.com/nazca-cierra-la-venta-de-teltronic-a-grupo-amper/","title":"Nazca cierra la venta de Teltronic a Amper","summary":"Culmina la operación anunciada en mayo, valorada en hasta 225 M€. Nazca, que compró Teltronic a Hytera en julio de 2025 con su fondo de defensa, entra en el capital de Amper.","angle":"Salida en algo más de un año: referencia de múltiplos en defensa y comunicaciones críticas.","rel":{"LBO":"media"},"sourceType":"sectorial","signal":"mna"},{"id":"bpce-sabadell","date":"2026-11-02","source":"Euribor.com.es","url":"https://www.euribor.com.es/2026/11/02/bpce-toma-el-7-de-sabadell-y-abre-la-puerta-al/","title":"BPCE confirma un 7% en Sabadell con margen para subir hasta el 9,9%","summary":"Ambas entidades exploran acuerdos en banca de inversión, leasing de bienes de equipo, crédito al consumo y clientes transfronterizos.","angle":"Cambios en la competencia de banca corporativa y de inversión en España.","rel":{"COR":"baja"},"sourceType":"analisis","signal":"mna"},{"id":"aena-9m","date":"2026-10-28","source":"El Español","url":"https://www.elespanol.com/invertia/empresas/turismo/20261028/aena-dispara-beneficio-millones-euros-primeros-meses-ano/1003744437262_0.html","title":"Aena gana 1.774,7 M€ hasta septiembre (+12,4%) con el DORA III ya aprobado","summary":"EBITDA de 3.077,9 M€ y 257,2 millones de pasajeros en la red española (+4,1%). El DORA III 2027-2031 fija una senda tarifaria de +0,33% anual y 9.991 M€ de inversión regulada.","angle":"Deuda neta de 5.845 M€, equivalente a 1,47 veces el EBITDA.","rel":{"INF":"media"},"sourceType":"prensa","signal":"resultados"},{"id":"bei-portugal","date":"2026-10-28","source":"EuropaWire","url":"https://news.europawire.eu/eib-group-marks-50-years-of-investment-in-portugal-and-outlines-new-financing-for-national-priorities/eu-press-release/2026/10/28/12/57/06/184674/","title":"El BEI celebra 50 años en Portugal con financiación para recuperación y redes de EDP","summary":"Anuncia 750 M€ para la recuperación tras los temporales (250 M€ al Estado y 500 M€ al Banco Português de Fomento) y un tercer tramo de 300 M€ para las redes de distribución de EDP, 213 M€ de ellos en Portugal.","angle":"Liquidez multilateral que compite con la banca en grandes corporates e infraestructura en Portugal.","rel":{"ENE":"media"},"sourceType":"primaria","signal":"liquidez"},{"id":"ferrovial-9m","date":"2026-10-27","source":"Investing.com","url":"https://es.investing.com/news/stock-market-news/ferrovial-publica-solidos-resultados-de-los-primeros-9m-2026-3893361","title":"Ferrovial eleva un 21,8% su EBITDA ajustado en los nueve primeros meses","summary":"Los ingresos de autopistas crecen un 14,7% en términos comparables y la 407 ETR aprueba un dividendo de 1.050 M C$. La cartera de construcción marca un récord de 19.000 M€, el 15% en España.","angle":"Recibe 524 M€ de dividendos de proyectos y mantiene caja neta de 1.700 M€ excluidos los proyectos de infraestructura.","rel":{"INF":"media","COR":"media"},"sourceType":"prensa","signal":"resultados"},{"id":"inversion-inmobiliaria","date":"2026-10-21","source":"Hi Retail","url":"https://hiretail.es/analisis-y-estudios/la-inversion-inmobiliaria-en-espana-crece-un-227-hasta-septiembre-y-supera-los-13-300me/","title":"La inversión inmobiliaria alcanza 13.310 M€ hasta septiembre (+22,7%)","summary":"El tercer trimestre se enfría, con 3.145 M€ (-6,9%). BNP Paribas Real Estate prevé cerrar 2026 en torno a 18.000 M€, un año histórico.","angle":"La rentabilidad prime logística sube 15 pb hasta el 5,00%: vigilar valoraciones y LTV.","rel":{"RE":"baja"},"sourceType":"sectorial","signal":"mercado"},{"id":"mercado-capacidad","date":"2026-09-17","source":"pv magazine España","url":"http://www.pv-magazine.es/2026/09/17/espana-crea-el-mercado-de-capacidad-que-remunera-la-potencia-firme-de-baterias-generacion-y-demanda/","title":"El BOE crea el mercado de capacidad: hasta 15 años de contrato para baterías nuevas","summary":"La Orden TED/966/2026 establece subastas pay-as-bid y un coeficiente de firmeza por tecnología que se fijará antes de cada subasta. En baterías, la potencia firme no podrá superar la capacidad de acceso a la red.","angle":"Ingresos contratados que pueden hacer bancable el almacenamiento stand-alone.","rel":{"ENE":"media"},"sourceType":"sectorial","signal":"regulatorio"},{"id":"almaraz-2030","date":"2026-08-14","source":"Euronews","url":"https://es.euronews.com/my-europe/2026/08/14/el-gobierno-de-espana-prorroga-la-central-nuclear-de-almaraz-hasta-2030-y-aplaza-su-cierre","title":"El Gobierno prorroga Almaraz hasta 2030 y aplaza tres años su cierre","summary":"La decisión reabre el debate sobre el calendario de cierre del resto del parque nuclear español.","angle":"Oferta firme del sistema y curva de precios a medio plazo.","rel":{"ENE":"baja"},"sourceType":"prensa","signal":"regulatorio"},{"id":"ferrovial-datacenter","date":"2026-08-03","source":"Vozpópuli","url":"https://www.vozpopuli.com/economia/empresas/ferrovial-busca-socios-para-financiar-su-milmillonario-campus-de-centros-de-datos-en-espana.html","title":"Ferrovial busca socios para financiar su campus de centros de datos en Alcobendas","summary":"Inversión estimada de unos 1.000 M€, a desarrollar por fases según disponibilidad de energía y contratación de clientes, combinando capital de terceros y deuda.","angle":"Pipeline de financiación de data centers con riesgo de comercialización.","rel":{"INF":"baja","RE":"baja"},"sourceType":"prensa","signal":"liquidez"},{"id":"grenergy-bess","date":"2026-07-22","source":"Energías Renovables","url":"https://www.energias-renovables.com/almacenamiento/grenergy-cierra-una-financiaci-n-de-100-20260722","title":"Grenergy firma la primera financiación sin recurso de una batería stand-alone en España","summary":"Santander y SMBC aportan 100 M€ para el proyecto Oviedo, de 618 MWh, que en febrero firmó el primer acuerdo de tolling financiero para baterías stand-alone en el país.","angle":"Precedente de estructura con tolling para financiar almacenamiento.","rel":{"LBO":"baja"},"sourceType":"sectorial","signal":"liquidez"},{"id":"lav-portugal","date":"2026-07-06","source":"ECO","url":"https://eco.sapo.pt/2026/07/06/consorcios-da-mota-e-dst-disputam-segunda-ppp-da-alta-velocidade/","title":"Mota-Engil y DST pujan por la segunda PPP de la alta velocidad Porto-Lisboa","summary":"Ambos consorcios presentaron ofertas para el tramo Oiã-Soure, la segunda parceria público-privada de la línea. Se espera una competencia a dos.","angle":"Pipeline de financiación PPP en Portugal tras el tramo Porto-Oiã.","rel":{"INF":"media"},"sourceType":"prensa","signal":"licitacion"},{"id":"ttf-90","date":"2026-10-23","source":"El Español","sourceType":"prensa","signal":"regulatorio","url":"https://www.elespanol.com/invertia/empresas/energia/20261023/alerta-mercado-nuevo-tope-gas-precio-ttf-solo-euros-nivel-activo-mecanismo-iberico/1003744431545_0.html","title":"El TTF supera los 90 €/MWh y el Gobierno estudia recuperar el tope al gas","summary":"Es la primera vez desde 2022 y queda a unos 6 €/MWh del nivel que activó el mecanismo ibérico. Las reservas europeas están por debajo de la media de cinco años y las grandes eléctricas se oponen a una nueva intervención.","angle":"Riesgo regulatorio sobre los ingresos de la generación merchant y sobre el coste energético de clientes industriales.","rel":{"ENE":"alta","COR":"media","STF":"media"}},{"id":"sacyr-rating","date":"2026-11-03","source":"Empresa Exterior","sourceType":"sectorial","signal":"rating","url":"https://empresaexterior.com/sacyr-dispara-su-beneficio-un-87-hasta-los-116-millones-y-eleva-su-flujo-de-caja-a-930-millones/","title":"Sacyr destaca su grado de inversión de S&P (BBB-, perspectiva estable) al presentar resultados","summary":"La calificación de S&P obtenida en 2026 se suma a la que ya tenía de Morningstar DBRS, según la información difundida con las cuentas de nueve meses.","angle":"El grado de inversión abarata la refinanciación corporativa y da soporte a la deuda con recurso del grupo.","rel":{"COR":"media"}},{"id":"fitch-portugal","date":"2026-09-04","source":"Euronews","sourceType":"prensa","signal":"rating","url":"https://www.euronews.com/business/2026/09/05/fitch-upgrades-portugals-rating-to-a-and-says-outlook-is-stable","title":"Fitch sube el rating de Portugal a A+ con perspectiva estable, su mejor nota en 15 años","summary":"La agencia destaca la mejora de las finanzas públicas, el compromiso con la prudencia fiscal y los superávits por cuenta corriente. Señala como riesgos la deuda aún elevada, el gasto en defensa y la presión en vivienda.","angle":"Mejora el techo soberano de corporates, bancos y concesiones portuguesas.","rel":{"COR":"baja","INF":"baja"}},{"id":"energeticas-9m","date":"2026-10-29","source":"Infobae","sourceType":"prensa","signal":"resultados","url":"https://www.infobae.com/espana/2026/10/29/las-energeticas-disparan-su-beneficio-un-47-hasta-septiembre-por-el-alza-del-crudo-ganan-14542-millones-y-repsol-lidera-con-una-subida-del-325/","title":"Iberdrola, Endesa, Naturgy y Repsol ganan 14.542 M€ hasta septiembre, un 47% más","summary":"Iberdrola gana 5.816 M€ (+9,6%), con plusvalías de la venta en México; Endesa, 1.962 M€ (+15%); y Naturgy, 1.758 M€ (+5,4%). Repsol lidera la subida con 5.006 M€.","angle":"Parte del beneficio es no recurrente (inventarios y plusvalías): separarlo al valorar la capacidad de pago de sponsors y offtakers.","rel":{"ENE":"media"}},{"id":"galp-3t","date":"2026-10-26","source":"ECO","sourceType":"prensa","signal":"resultados","url":"https://eco.sapo.pt/2026/10/26/galp-bate-recorde-de-lucros-com-disparo-de-68-para-682-milhoes-entre-julho-e-setembro/","title":"Galp bate su récord trimestral: gana 682 M€ (+68%) y eleva su objetivo de EBITDA a cerca de 5.000 M€","summary":"En nueve meses gana 1.494 M€ (+54%), impulsada por un margen de refino de 33,8 $/barril y el arranque del campo Bacalhau en Brasil. Los mercados internacionales aportan el 91% del EBITDA.","angle":"Beneficio muy ligado al ciclo de refino y al crudo: vigilar la normalización de márgenes en 2027.","rel":{"ENE":"alta"}},{"id":"galp-moeve","date":"2026-10-26","source":"ECO","sourceType":"prensa","signal":"mna","url":"https://eco.sapo.pt/2026/10/26/oficial-galp-e-moeve-falham-acordo-para-fundir-negocios-de-refinacao-e-distribuicao/","title":"Galp y Moeve rompen sin acuerdo las negociaciones para unir refino y distribución","summary":"Las dos compañías dan por terminadas las conversaciones para combinar sus negocios de refino y comercialización en la península.","angle":"Se mantiene la estructura actual de ambos grupos; seguir posibles alternativas estratégicas en el refino ibérico.","rel":{"ENE":"media"}},{"id":"metrovacesa-9m","date":"2026-10-22","source":"Bolsamanía","sourceType":"prensa","signal":"resultados","url":"https://www.bolsamania.com/noticias/resultados-anuncios/metrovacesa-eleva-ingresos-septiembre-75-dividendo-1-euro-diciembre--23903423.html","title":"Metrovacesa ingresa 465 M€ hasta septiembre (+75%) y propone un dividendo de 1 € por acción","summary":"Entrega 1.172 viviendas (+44%) con un margen bruto del 27,4%. Sus preventas, 2.851 viviendas por 1.052 M€, cubren el 96% de las entregas de 2026 y el 83% de las de 2027.","angle":"Deuda neta de 227 M€ (LTV del 10,6%); el dividendo de diciembre supone unos 152 M€ de salida de caja.","rel":{"RE":"alta"}},{"id":"indra-9m","date":"2026-10-29","source":"Bolsamanía","sourceType":"prensa","signal":"resultados","url":"https://www.bolsamania.com/noticias/resultados-anuncios/indra-gana-355-millones-nueve-primeros-meses-22-reitera-objetivos--23947139.html","title":"Indra gana 355 M€ hasta septiembre (+22%) y dispara su cartera a 22.165 M€","summary":"Los ingresos suben un 29%, hasta 4.645 M€, y el EBITDA un 62%, impulsados por espacio y defensa. Reitera objetivos y presentará un nuevo plan estratégico en noviembre.","angle":"Crecimiento acelerado vía defensa: seguir la financiación del nuevo plan y posibles adquisiciones.","rel":{"COR":"media"}},{"id":"enagas-9m","date":"2026-10-20","source":"Enagás","sourceType":"primaria","signal":"resultados","url":"https://www.enagas.es/en/press-room/news-room/press-releases/results-3t-2026/","title":"Enagás gana 204 M€ hasta septiembre y completa la compra del 31,5% de Teréga","summary":"El beneficio incluye la venta del 40% de Enagás Renovable. La compra de Teréga costó 573 M€ y avanza la ingeniería del corredor de hidrógeno BarMar.","angle":"Más del 80% de su deuda es a tipo fijo (coste del 2,1%, vida media de 3,9 años), lo que limita la sensibilidad a una subida del BCE.","rel":{"ENE":"media"}},{"id":"cirsa-9m","date":"2026-11-04","source":"PressDigital","sourceType":"prensa","signal":"resultados","url":"https://www.pressdigital.es/articulo/economia/2026-11-04/6077788-cirsa-gana-1283-millones-hasta-septiembre-736","title":"Cirsa gana 128 M€ hasta septiembre (+74%) y deja su apalancamiento en 2,7 veces ebitda","summary":"Ingresos de 1.887 M€ (+10%) y ebitda de 591 M€ (+7,8%) en nueve meses. La deuda financiera neta cierra septiembre en 2.104 M€, 2,7 veces ebitda.","angle":"Mejora de cobertura antes de la absorción por Lottomatica (junta a finales de noviembre, cierre previsto en el 2T 2027): revisar cláusulas de cambio de control y el destino de la deuda de Cirsa en el grupo resultante.","rel":{"LBO":"alta"}},{"id":"impress-bei","date":"2026-10-31","source":"Emprendedores","sourceType":"prensa","signal":"liquidez","url":"https://emprendedores.es/casos-de-exito/impress-firma-un-prestamo-de-40-millones-con-el-bei-para-impulsar-su-expansion-y-su-ia/","title":"Impress firma 40 M€ de venture debt con el BEI para crecer en el norte de Europa","summary":"La cadena de ortodoncia invisible, con más de 110 clínicas en 10 países, firma un préstamo de 40 M€ del BEI en formato venture debt para su plataforma de IA y su expansión en Alemania, Países Bajos y Reino Unido. Suma 278 M€ captados en cuatro rondas de capital.","angle":"Operación de referencia de venture debt en España: deuda sin dilución para una compañía muy capitalizada pero aún en expansión; vigilar plazo, covenants y consumo de caja.","rel":{"SPK":"media"}},{"id":"crescenta-blackrock","date":"2026-10-26","source":"RankiaPro","sourceType":"sectorial","signal":"liquidez","url":"https://rankiapro.com/es/noticias/crescenta-financiacion-blackrock/","title":"Crescenta firma una línea de deuda con fondos de BlackRock","summary":"La gestora digital de fondos de private equity obtiene financiación de fondos y cuentas gestionados por BlackRock. Con ella suma hasta 9 M€ en capital y deuda en seis meses, tras la ronda de abril con Kfund, FJ Labs, Acurio Ventures y Endeavor Catalyst.","angle":"Estructura típica de venture debt: la deuda llega detrás de una ronda de capital reciente para alargar la caja sin diluir a los socios.","rel":{"SPK":"baja"}},{"id":"by-venture-fondo","date":"2026-10-30","source":"Webcapitalriesgo","sourceType":"sectorial","signal":"mercado","url":"https://www.webcapitalriesgo.com/by-venture-partners-cierra-un-fondo-de-60m-y-situa-a-espana-entre-sus-mercados-prioritarios/","title":"BY Venture Partners cierra un fondo de 60 M$ y abre en Lisboa su base para España y Portugal","summary":"La gestora cierra su Fund III, de 60 M$, para startups tecnológicas desde pre-seed hasta Serie A, con tickets de hasta 1 M$ y foco en IA. Su inversor principal es el Dubai Future District Fund y supera los 200 M$ gestionados.","angle":"Más capital disponible para rondas tempranas en la península: amplía las opciones de las startups para reforzar fondos propios antes de amortizar deuda.","rel":{"SPK":"media"}},{"id":"rondas-artiso-talky","date":"2026-11-03","source":"Forbes España","sourceType":"prensa","signal":"liquidez","url":"https://forbes.es/empresas/1061192/radar-de-rondas-artiso-talky-labs-e-yk-robotics-levantan-55-millones-en-rondas","title":"Artiso, Talky Labs y YK-Robotics captan 5,5 M€ en rondas tempranas","summary":"Artiso (Barcelona) levanta más de 3 M€ en una pre-seed liderada por Criteria Venture Tech; Talky Labs, 1,5 M€; y YK-Robotics, 1 M€ en una seed coliderada por Draper B1 y First Drop, con BStartup de Banco Sabadell.","angle":"Pulso de la inversión semilla en España y de la actividad de otros bancos y corporates (Criteria, Sabadell) en el segmento de startups.","rel":{"SPK":"baja"}},{"id":"granter-seed","date":"2026-11-03","source":"Observador","sourceType":"prensa","signal":"liquidez","url":"https://observador.pt/2026/11/03/startup-portuguesa-granter-recebe-investimento-de-16-milhoes-para-expansao-na-europa/","title":"La portuguesa Granter capta 1,6 M€ y prepara su entrada en España","summary":"La startup, que usa IA para preparar solicitudes de fondos públicos y europeos para pymes, cierra una seed de 1,6 M€ liderada por 3XP Global con el programa de capital riesgo que gestiona el Banco Português de Fomento. Prevé pasar de 5 a 15 empleados y abrir España y Alemania-Austria.","angle":"Refleja el peso del dinero público (Banco Português de Fomento, fondos de recuperación) en las rondas portuguesas.","rel":{"SPK":"baja"}},{"id":"inveready-search-funds","date":"2026-10-26","source":"El Español","sourceType":"prensa","signal":"mna","url":"https://www.elespanol.com/invertia/mis-finanzas/fondos-de-inversion/20261026/inveready-cierra-fondo-search-funds-millones-euros-solo-mes-preve-movilizar/1003744432331_0.html","title":"Inveready cierra en un mes un fondo de search funds de 20 M€","summary":"Inveready Searchers I alcanza 20 M€ y la gestora prevé movilizar 50-60 M€ con coinversiones. Respalda a gestores que compran pymes rentables, con ebitda de 1-3 M€; ya suma cuatro operaciones, dos de ellas en España.","angle":"Inveready, activo también en venture debt, amplía su actividad hacia compras apalancadas de pymes: más competencia en financiación de crecimiento y en pequeños LBO.","rel":{"SPK":"baja","LBO":"baja"}},{"id":"bbva-spark-1000","date":"2026-09-29","source":"Mundo Startups","sourceType":"prensa","signal":"liquidez","url":"https://www.mundostartups.es/inversion/bbva-spark-1000-millones-premio-endeavor-espana-2026/","title":"BBVA Spark supera 1.000 M€ comprometidos y recibe el premio Endeavor España","summary":"La unidad de banca para empresas innovadoras de alto crecimiento supera los 1.000 M€ de financiación comprometida y los 1.800 clientes en cinco geografías; en 2025 firmó más de 30 operaciones. Endeavor le concede su premio al compromiso corporativo con el emprendimiento.","angle":"Referencia del tamaño y el ritmo de la actividad Spark para leer en contexto las operaciones de venture debt del mercado.","rel":{"SPK":"media"}}],"scope":"España y Portugal","archive":[]}
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  var K = { key: "pmi-key", keyR: "pmi-key-r", brief: "pmi-radar-brief", view: "pmi-view", seen: "pmi-seen", mine: "pmi-mine", archTeam: "pmi-arch-team" };
+
+  var TEAMS = [
+    { code: "ENE", slug: "energia", short: "PF Energía", long: "Project Finance de Energía" },
+    { code: "INF", slug: "infraestructuras", short: "PF Infraestructuras", long: "Project Finance de Infraestructuras" },
+    { code: "RE", slug: "real-estate", short: "PF Real Estate", long: "Project Finance de Real Estate" },
+    { code: "COR", slug: "corporaciones", short: "Grandes Corporaciones", long: "Grandes Corporaciones" },
+    { code: "STF", slug: "stf", short: "STF", long: "Structured Trade Finance" },
+    { code: "LBO", slug: "lbo", short: "LBOs", long: "Leveraged Buyouts" },
+    { code: "SPK", slug: "spark", short: "Spark", long: "Spark · Venture capital y venture debt" }
+  ];
+  var BY_CODE = {}, BY_SLUG = {};
+  TEAMS.forEach(function (t) { BY_CODE[t.code] = t; BY_SLUG[t.slug] = t; });
+  var ORDER = ["resumen"].concat(TEAMS.map(function (t) { return t.slug; }), ["mi-lista", "hemeroteca"]);
+
+  var REL = { alta: 3, media: 2, baja: 1 };
+  var REL_LABEL = { alta: "Alta", media: "Media", baja: "Baja" };
+  var SIGNALS = {
+    rating: "Rating", liquidez: "Liquidez y financiación", insolvencia: "Insolvencia", mna: "M&A y control",
+    regulatorio: "Regulatorio", litigio: "Litigios", esg: "ESG", resultados: "Resultados",
+    mercado: "Mercado y precios", macro: "Macro y tipos", licitacion: "Licitaciones"
+  };
+  var SOURCE_TYPES = { prensa: "Prensa", agencia: "Agencia", primaria: "Fuente primaria", sectorial: "Sectorial", analisis: "Análisis" };
+  var MONTHS = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+  var MONTHS_LONG = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+  var WEEKDAYS = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+  var DIR_ARROW = { up: "▲", down: "▼", flat: "=" };
+
+  /* Acceso con contraseña compartida (no cifra el contenido). */
+  var PASSWORD = "portfoliomonitoringiberia1";
+  var RAW = null;
+  try { RAW = JSON.parse(document.getElementById("news-data").textContent); } catch (e) {}
+  var DATA = { items: [], archive: [], summaries: {}, indicators: [], agenda: [] };
+  function setData(d) {
+    DATA = d || {};
+    DATA.items = DATA.items || [];
+    DATA.archive = DATA.archive || [];
+    DATA.summaries = DATA.summaries || {};
+    DATA.indicators = DATA.indicators || [];
+    DATA.agenda = DATA.agenda || [];
+  }
+
+  /* ---------- Helpers ---------- */
+  function store(kind) { try { return kind === "session" ? window.sessionStorage : window.localStorage; } catch (e) { return null; } }
+  function sget(kind, key) { try { var s = store(kind); return s ? s.getItem(key) : null; } catch (e) { return null; } }
+  function sset(kind, key, v) { try { var s = store(kind); if (s) s.setItem(key, v); } catch (e) {} }
+  function sdel(kind, key) { try { var s = store(kind); if (s) s.removeItem(key); } catch (e) {} }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function rich(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
+  function plain(s) { return String(s || "").replace(/\*\*(.+?)\*\*/g, "$1"); }
+  function norm(s) { return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+  function parts(iso) { return iso.split("-").map(function (x) { return parseInt(x, 10); }); }
+  function fmtDate(iso) { var p = parts(iso); return p[2] + " " + MONTHS[p[1] - 1]; }
+  function longDate(iso) {
+    var p = parts(iso);
+    var wd = new Date(Date.UTC(p[0], p[1] - 1, p[2], 12)).getUTCDay();
+    return WEEKDAYS[wd] + ", " + p[2] + " de " + MONTHS_LONG[p[1] - 1] + " de " + p[0];
+  }
+  function addDays(iso, n) {
+    var p = parts(iso); var d = new Date(Date.UTC(p[0], p[1] - 1, p[2] + n, 12));
+    return d.toISOString().slice(0, 10);
+  }
+  function madridNow() {
+    try {
+      var f = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Madrid", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", hourCycle: "h23" });
+      var o = {}; f.formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; });
+      return { date: o.year + "-" + o.month + "-" + o.day, hour: parseInt(o.hour, 10) };
+    } catch (e) { return null; }
+  }
+  function maxRel(item) {
+    var best = "baja";
+    Object.keys(item.rel || {}).forEach(function (k) { if (REL[item.rel[k]] > REL[best]) best = item.rel[k]; });
+    return best;
+  }
+  function sortItems(list, relOf) {
+    return list.slice().sort(function (a, b) {
+      return (REL[relOf(b)] - REL[relOf(a)]) || b.date.localeCompare(a.date) ||
+        (Object.keys(b.rel || {}).length - Object.keys(a.rel || {}).length);
+    });
+  }
+  function teamItems(code) {
+    return sortItems(DATA.items.filter(function (i) { return i.rel && i.rel[code]; }), function (i) { return i.rel[code]; }).slice(0, 30);
+  }
+  function altaCount(list, relOf) { return list.filter(function (i) { return relOf(i) === "alta"; }).length; }
+  function itemText(i) { return norm([i.title, i.summary, i.angle, i.source, SIGNALS[i.signal]].join(" ")); }
+
+  /* ---------- State ---------- */
+  var state = { q: "", compact: sget("local", K.view) === "compact", newIds: {}, mine: [] };
+  try { state.mine = JSON.parse(sget("local", K.mine) || "[]").filter(function (x) { return typeof x === "string" && x.trim(); }); } catch (e) { state.mine = []; }
+  function saveMine() { sset("local", K.mine, JSON.stringify(state.mine)); }
+  function isMine(item) {
+    if (!state.mine.length) return false;
+    var t = itemText(item);
+    return state.mine.some(function (n) { return t.indexOf(norm(n)) !== -1; });
+  }
+  function mineItems(list) { return list.filter(isMine); }
+
+  function computeNew() {
+    var prev = null;
+    try { prev = JSON.parse(sget("local", K.seen) || "null"); } catch (e) { prev = null; }
+    var ids = DATA.items.map(function (i) { return i.id; });
+    if (prev && prev.length) {
+      var seen = {}; prev.forEach(function (id) { seen[id] = true; });
+      DATA.items.forEach(function (i) { if (!seen[i.id]) state.newIds[i.id] = true; });
+    } else {
+      var from = addDays(DATA.updated, -1);
+      DATA.items.forEach(function (i) { if (i.date >= from) state.newIds[i.id] = true; });
+    }
+    sset("local", K.seen, JSON.stringify(ids));
+  }
+
+  /* ---------- Rendering pieces ---------- */
+  function relChip(r) { return '<span class="rel rel-' + r + '">' + REL_LABEL[r] + "</span>"; }
+
+  function itemHTML(item, rel, rank) {
+    var tags = Object.keys(item.rel || {})
+      .sort(function (a, b) { return REL[item.rel[b]] - REL[item.rel[a]]; })
+      .map(function (c) {
+        var t = BY_CODE[c]; if (!t) return "";
+        return '<a class="tag" href="#' + t.slug + '" title="' + esc(t.long) + ": relevancia " + REL_LABEL[item.rel[c]].toLowerCase() + '">' + esc(t.short) + "</a>";
+      }).join("");
+    var badges = (state.newIds[item.id] ? '<span class="badge badge-new">Nuevo</span>' : "") +
+      (isMine(item) ? '<span class="badge badge-mine">Mi lista</span>' : "");
+    var stype = SOURCE_TYPES[item.sourceType] ? '<span class="stype">' + SOURCE_TYPES[item.sourceType] + "</span>" : "";
+    return '<li class="item">' +
+      '<div class="item-meta">' +
+        (rank ? '<span class="rank">' + (rank < 10 ? "0" + rank : rank) + "</span>" : "") +
+        relChip(rel) +
+        '<time datetime="' + esc(item.date) + '">' + fmtDate(item.date) + "</time>" +
+        (SIGNALS[item.signal] ? '<span class="sig">' + SIGNALS[item.signal] + "</span>" : "") +
+      "</div>" +
+      '<div class="item-body">' +
+        (badges ? '<div class="badges">' + badges + "</div>" : "") +
+        '<a class="item-title" href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' + esc(item.title) + ' <span class="ext" aria-hidden="true">↗</span></a>' +
+        (item.summary ? '<p class="item-sum">' + esc(item.summary) + "</p>" : "") +
+        (item.angle ? '<p class="angle"><b>Clave de seguimiento</b>' + esc(item.angle) + "</p>" : "") +
+        '<div class="item-foot">' +
+          '<span class="src">Fuente: <a href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' + esc(item.source) + "</a>" + stype + "</span>" +
+          '<span class="tags">' + tags + "</span>" +
+          '<button type="button" class="copy-btn" data-copy="' + esc(item.id) + '" data-rel="' + rel + '">Copiar</button>' +
+        "</div>" +
+      "</div>" +
+    "</li>";
+  }
+
+  function listHTML(list, relOf, ranked) {
+    return list.map(function (i, n) { return itemHTML(i, relOf(i), ranked ? n + 1 : 0); }).join("");
+  }
+
+  function mixHTML(list, relOf) {
+    var c = { alta: 0, media: 0, baja: 0 };
+    list.forEach(function (i) { c[relOf(i)]++; });
+    return ["alta", "media", "baja"].filter(function (r) { return c[r]; })
+      .map(function (r) { return '<span class="rel rel-' + r + '">' + c[r] + " " + REL_LABEL[r].toLowerCase() + "</span>"; }).join("");
+  }
+
+  function bannerHTML() {
+    var now = madridNow();
+    if (!now || !DATA.updated) return "";
+    if (DATA.updated < now.date && (now.hour >= 9 || DATA.updated < addDays(now.date, -1))) {
+      return '<div class="banner" role="status"><span aria-hidden="true">⚠</span><div><b>La actualización de hoy aún no se ha publicado.</b> Estás viendo las noticias del ' +
+        esc(longDate(DATA.updated).toLowerCase()) + ".</div></div>";
+    }
+    return "";
+  }
+
+  /* ---------- Tabs ---------- */
+  var tabsEl = document.getElementById("tabs");
+  function renderTabs(active) {
+    var home = sortItems(DATA.items, maxRel);
+    var html = '<a class="tab" role="tab" href="#resumen" aria-selected="' + (active === "resumen") + '">Resumen' +
+      (altaCount(home, maxRel) ? '<span class="count count-alta" title="Noticias de relevancia alta">' + altaCount(home, maxRel) + "</span>" : "") + "</a>";
+    TEAMS.forEach(function (t) {
+      var list = teamItems(t.code);
+      var a = altaCount(list, function (i) { return i.rel[t.code]; });
+      html += '<a class="tab" role="tab" href="#' + t.slug + '" aria-selected="' + (active === t.slug) + '">' + esc(t.short) +
+        '<span class="count" title="Noticias">' + list.length + "</span>" +
+        (a ? '<span class="count count-alta" title="De relevancia alta">' + a + "</span>" : "") + "</a>";
+    });
+    var mineN = mineItems(DATA.items).length;
+    html += '<span class="tab-sep" aria-hidden="true"></span>' +
+      '<a class="tab" role="tab" href="#mi-lista" aria-selected="' + (active === "mi-lista") + '">Mi lista' +
+        (state.mine.length ? '<span class="count">' + mineN + "</span>" : "") + "</a>" +
+      '<a class="tab" role="tab" href="#hemeroteca" aria-selected="' + (active === "hemeroteca") + '">Hemeroteca' +
+        (DATA.archive.length ? '<span class="count">' + DATA.archive.length + "</span>" : "") + "</a>";
+    tabsEl.innerHTML = html;
+    var sel = tabsEl.querySelector('[aria-selected="true"]');
+    if (sel && sel.scrollIntoView) { try { sel.scrollIntoView({ block: "nearest", inline: "nearest" }); } catch (e) {} }
+  }
+
+  /* ---------- Home ---------- */
+  var mainEl = document.getElementById("main");
+
+  function summaryFor(code, src) {
+    var sums = (src || DATA).summaries || {};
+    return sums[code] || sums.ALL || { text: "", points: [] };
+  }
+
+  function briefBody(code) {
+    var s = summaryFor(code);
+    var team = BY_CODE[code];
+    var list = team ? teamItems(code) : DATA.items;
+    var relOf = team ? function (i) { return i.rel[code]; } : maxRel;
+    var points = (s.points || []).map(function (p) { return "<li><span>" + rich(p) + "</span></li>"; }).join("");
+    var foot = team
+      ? '<a href="#' + team.slug + '">Ver las ' + list.length + " noticias de " + esc(team.short) + " →</a>"
+      : "<span>" + list.length + " noticias analizadas para los seis equipos</span>";
+    return '<div class="brief-cols">' +
+        (points ? '<div class="points-wrap"><div class="eyebrow">Puntos de atención</div><ul class="points">' + points + "</ul></div>" : "") +
+        '<p class="brief-text">' + rich(s.text) + "</p>" +
+      "</div>" +
+      '<div class="brief-foot"><span class="mix">' + mixHTML(list, relOf) + "</span>" + foot + "</div>";
+  }
+
+  function indicatorsHTML() {
+    var groups = [];
+    var byG = {};
+    (DATA.indicators || []).forEach(function (k) {
+      var g = k.group || "Indicadores";
+      if (!byG[g]) { byG[g] = []; groups.push(g); }
+      byG[g].push(k);
+    });
+    return groups.map(function (g) {
+      return '<div class="ind-g">' + esc(g) + '</div><ul class="kv">' + byG[g].map(function (k) {
+        var chg = k.change ? '<span class="chg">' + (DIR_ARROW[k.dir] ? DIR_ARROW[k.dir] + " " : "") + esc(k.change) + "</span>" : "";
+        return '<li><span class="k">' + esc(k.label) + '</span><span class="v">' + esc(k.value) + chg + "</span>" +
+          '<span class="n">' + esc(k.note) + (k.url ? ' · <a href="' + esc(k.url) + '" target="_blank" rel="noopener noreferrer">' + esc(k.source) + "</a>" : "") + "</span></li>";
+      }).join("") + "</ul>";
+    }).join("");
+  }
+
+  function renderHome() {
+    var saved = sget("local", K.brief);
+    var current = (saved && (saved === "ALL" || BY_CODE[saved])) ? saved : "ALL";
+    var top = sortItems(DATA.items, maxRel).slice(0, 10);
+    var ratings = DATA.items.filter(function (i) { return i.signal === "rating"; })
+      .sort(function (a, b) { return b.date.localeCompare(a.date); }).slice(0, 5);
+
+    var options = '<option value="ALL">Todo el departamento</option>' +
+      TEAMS.map(function (t) { return '<option value="' + t.code + '">' + esc(t.long) + "</option>"; }).join("");
+
+    var agenda = (DATA.agenda || []).map(function (a) {
+      return '<li><span class="d">' + esc(a.date) + '</span><a href="' + esc(a.url) + '" target="_blank" rel="noopener noreferrer">' + esc(a.text) + "</a></li>";
+    }).join("");
+
+    var mineN = mineItems(DATA.items).length;
+    var mineBlock = state.mine.length
+      ? '<p class="side-note">' + mineN + (mineN === 1 ? " noticia coincide" : " noticias coinciden") + " hoy con los " + state.mine.length + ' nombres que sigues. <a href="#mi-lista">Ver Mi lista →</a></p>'
+      : '<p class="side-note">Añade los nombres que sigues y la página los marcará en todas las noticias. Se guardan solo en este navegador. <a href="#mi-lista">Configurar →</a></p>';
+
+    mainEl.innerHTML = bannerHTML() +
+      '<div class="home-grid view-enter">' +
+        '<div class="main-col">' +
+          '<section class="brief" aria-labelledby="brief-h">' +
+            '<div class="brief-top">' +
+              '<div><div class="eyebrow">' + esc(longDate(DATA.updated)) + '</div><h2 id="brief-h">Resumen del día</h2></div>' +
+              '<div class="brief-controls">' +
+                '<div class="select-wrap"><label for="brief-team">Personalizar para</label><select id="brief-team">' + options + "</select></div>" +
+                '<button type="button" class="ghost-btn" id="copy-brief">Copiar a Gmail</button>' +
+                '<a class="gmail-link" id="gmail-brief" href="' + esc(gmailUrl("ALL")) + '" target="_blank" rel="noopener noreferrer">Abrir borrador en Gmail ↗</a>' +
+              "</div>" +
+            "</div>" +
+            '<div id="brief-body">' + briefBody(current) + "</div>" +
+          "</section>" +
+          '<section aria-labelledby="top-h">' +
+            '<div class="section-head"><h2 id="top-h">Top 10 por relevancia</h2>' +
+              "<p>Las noticias de empresas con mayor impacto potencial en el seguimiento de la cartera, de todos los equipos. Ordenadas por relevancia y, dentro de cada nivel, por fecha.</p></div>" +
+            '<ol class="news">' + listHTML(top, maxRel, true) + "</ol>" +
+          "</section>" +
+          '<section aria-labelledby="rat-h">' +
+            '<div class="section-head"><h2 id="rat-h">Ratings y crédito</h2>' +
+              "<p>Acciones y confirmaciones de rating sobre empresas, proyectos y soberanos de España y Portugal.</p></div>" +
+            (ratings.length ? '<ol class="news">' + listHTML(ratings, maxRel, false) + "</ol>" : '<p class="empty">Sin acciones de rating relevantes en los últimos días.</p>') +
+          "</section>" +
+        "</div>" +
+        '<aside class="home-side">' +
+          '<div class="side-block"><h3>Próximos hitos de empresas</h3><ul class="agenda">' + agenda + "</ul></div>" +
+          '<div class="side-block"><h3>Mi lista</h3>' + mineBlock + "</div>" +
+          '<div class="side-block"><h3>Indicadores de referencia</h3>' + indicatorsHTML() + "</div>" +
+          '<div class="side-block"><h3>Cómo se clasifica la relevancia</h3><ul class="legend">' +
+            "<li>" + relChip("alta") + "Puede afectar a la capacidad de pago, la liquidez, los covenants o el calendario de una empresa u operación en cartera.</li>" +
+            "<li>" + relChip("media") + "Cambia la situación de una empresa o el contexto de su sector.</li>" +
+            "<li>" + relChip("baja") + "Referencia de mercado o tendencia que conviene tener presente.</li>" +
+          "</ul></div>" +
+        "</aside>" +
+      "</div>";
+
+    var sel = document.getElementById("brief-team");
+    sel.value = current;
+    sel.addEventListener("change", function () {
+      sset("local", K.brief, sel.value);
+      document.getElementById("brief-body").innerHTML = briefBody(sel.value);
+      document.getElementById("gmail-brief").href = gmailUrl(sel.value);
+    });
+    document.getElementById("copy-brief").addEventListener("click", function () {
+      copyRich(briefMailHTML(sel.value), briefPlain(sel.value), "Resumen copiado. Pégalo en un correo de Gmail con Ctrl+V.");
+    });
+  }
+
+  /* ---------- Team ---------- */
+  function filterChips(id, label, options, active) {
+    return '<div class="filters" role="group" aria-label="' + esc(label) + '"><span class="lbl">' + esc(label) + "</span>" +
+      options.map(function (o) {
+        return '<button type="button" class="filter" data-group="' + id + '" data-f="' + esc(o.v) + '" aria-pressed="' + (active === o.v) + '">' +
+          esc(o.t) + ' <span class="c">' + o.n + "</span></button>";
+      }).join("") + "</div>";
+  }
+
+  function renderTeam(team) {
+    var list = teamItems(team.code);
+    var relOf = function (i) { return i.rel[team.code]; };
+    var s = (DATA.summaries || {})[team.code];
+    var fRel = "todas", fSig = "todas";
+    var pts = ((s && s.points) || []).map(function (p) { return "<li><span>" + rich(p) + "</span></li>"; }).join("");
+    var detail = ((s && s.detail) || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
+
+    function draw() {
+      var relN = { todas: list.length, alta: 0, media: 0, baja: 0 };
+      var sigN = {};
+      list.forEach(function (i) { relN[relOf(i)]++; if (i.signal) sigN[i.signal] = (sigN[i.signal] || 0) + 1; });
+      var relOpts = ["todas", "alta", "media", "baja"].map(function (f) { return { v: f, t: f === "todas" ? "Todas" : REL_LABEL[f], n: relN[f] }; });
+      var sigOpts = [{ v: "todas", t: "Todas", n: list.length }].concat(
+        Object.keys(SIGNALS).filter(function (k) { return sigN[k]; }).map(function (k) { return { v: k, t: SIGNALS[k], n: sigN[k] }; }));
+      document.getElementById("team-filters").innerHTML =
+        filterChips("rel", "Relevancia", relOpts, fRel) + filterChips("sig", "Señal", sigOpts, fSig);
+      var shown = list.filter(function (i) {
+        return (fRel === "todas" || relOf(i) === fRel) && (fSig === "todas" || i.signal === fSig);
+      });
+      document.getElementById("team-list").innerHTML = shown.length ? listHTML(shown, relOf, false)
+        : '<li class="empty">No hay noticias con estos filtros.</li>';
+    }
+
+    mainEl.innerHTML = bannerHTML() +
+      '<section class="view-enter" aria-labelledby="team-h">' +
+        '<div class="view-head"><div><div class="eyebrow">Equipo · ' + esc(team.short) + '</div><h2 id="team-h">' + esc(team.long) + "</h2>" +
+          "<p>" + list.length + " noticias (máximo 30), ordenadas de mayor a menor relevancia para este equipo.</p></div>" +
+          '<div class="side-actions"><button type="button" class="ghost-btn" id="copy-team">Copiar a Gmail</button>' +
+          '<a class="gmail-link" href="' + esc(gmailUrl(team.code)) + '" target="_blank" rel="noopener noreferrer">Abrir borrador en Gmail ↗</a></div></div>' +
+        '<div class="team-grid">' +
+          (s ? '<aside class="team-side" id="team-side" aria-label="Resumen del equipo"><h3>Resumen del equipo</h3>' +
+            (pts ? '<ul class="points">' + pts + "</ul>" : "") +
+            '<p class="team-brief">' + rich(s.text) + "</p>" +
+            (detail ? '<div class="side-actions"><button type="button" class="ghost-btn detail-btn" id="detail-btn" aria-expanded="false" aria-controls="team-detail">Detalle</button></div>' : "") +
+            '<div class="mix">' + mixHTML(list, relOf) + "</div>" +
+            (detail ? '<div class="team-detail" id="team-detail" hidden><h3>Resumen detallado</h3>' + detail + "</div>" : "") +
+            "</aside>" : "") +
+          '<div><div class="filters-wrap" id="team-filters"></div><ol class="news" id="team-list"></ol></div>' +
+        "</div>" +
+      "</section>";
+
+    document.getElementById("team-filters").addEventListener("click", function (e) {
+      var b = e.target.closest(".filter"); if (!b) return;
+      if (b.getAttribute("data-group") === "rel") fRel = b.getAttribute("data-f"); else fSig = b.getAttribute("data-f");
+      draw();
+    });
+    document.getElementById("copy-team").addEventListener("click", function () {
+      copyRich(briefMailHTML(team.code, true), briefPlain(team.code, true), "Resumen del equipo copiado. Pégalo en un correo de Gmail con Ctrl+V.");
+    });
+    var dBtn = document.getElementById("detail-btn");
+    if (dBtn) dBtn.addEventListener("click", function () {
+      var grid = mainEl.querySelector(".team-grid");
+      var open = !grid.classList.contains("expanded");
+      grid.classList.toggle("expanded", open);
+      document.getElementById("team-detail").hidden = !open;
+      dBtn.setAttribute("aria-expanded", String(open));
+      dBtn.textContent = open ? "Ocultar detalle" : "Detalle";
+      if (open) { var side = document.getElementById("team-side"); if (side && side.scrollIntoView) side.scrollIntoView({ block: "start", behavior: "smooth" }); }
+    });
+    draw();
+  }
+
+  /* ---------- Mi lista ---------- */
+  function renderMine() {
+    var current = sortItems(mineItems(DATA.items), maxRel);
+    var seenUrls = {}; DATA.items.forEach(function (i) { seenUrls[i.url] = true; });
+    var past = [];
+    DATA.archive.forEach(function (day) {
+      (day.items || []).forEach(function (i) { if (!seenUrls[i.url] && isMine(i)) { seenUrls[i.url] = true; past.push(i); } });
+    });
+    var chips = state.mine.map(function (n, idx) {
+      return '<span class="name-chip">' + esc(n) + '<button type="button" data-remove="' + idx + '" aria-label="Quitar ' + esc(n) + '">×</button></span>';
+    }).join("");
+
+    mainEl.innerHTML = bannerHTML() +
+      '<section class="view-enter" aria-labelledby="mine-h">' +
+        '<div class="view-head"><div><div class="eyebrow">Seguimiento personal</div><h2 id="mine-h">Mi lista</h2>' +
+          "<p>Escribe los nombres de empresas, sponsors o proyectos que sigues. La página marcará las noticias que los mencionen. " +
+          "La lista se guarda solo en este navegador: no se publica ni se envía a ningún sitio. No añadas información interna ni de clientes que no sea pública.</p></div></div>" +
+        '<form class="mine-form" id="mine-form"><label class="sr-only" for="mine-input">Nombre a seguir</label>' +
+          '<input id="mine-input" type="text" placeholder="Escribe el nombre de una empresa o sponsor" autocomplete="off">' +
+          '<button class="btn" type="submit">Añadir</button></form>' +
+        '<div class="names">' + (chips || '<span class="empty">Todavía no sigues ningún nombre.</span>') + "</div>" +
+        (state.mine.length
+          ? '<h3 class="sub-h">Noticias de hoy que coinciden (' + current.length + ")</h3>" +
+            (current.length ? '<ol class="news">' + listHTML(current, maxRel, false) + "</ol>" : '<p class="empty">Ninguna noticia de hoy menciona estos nombres.</p>') +
+            (past.length ? '<h3 class="sub-h">En la hemeroteca (' + past.length + ")</h3>" + '<ol class="news">' + listHTML(sortItems(past, maxRel), maxRel, false) + "</ol>" : "")
+          : "") +
+      "</section>";
+
+    document.getElementById("mine-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var inp = document.getElementById("mine-input");
+      var v = inp.value.trim();
+      if (v && state.mine.map(norm).indexOf(norm(v)) === -1) { state.mine.push(v); saveMine(); }
+      route();
+      var again = document.getElementById("mine-input"); if (again) again.focus();
+    });
+    mainEl.querySelector(".names").addEventListener("click", function (e) {
+      var b = e.target.closest("[data-remove]"); if (!b) return;
+      state.mine.splice(parseInt(b.getAttribute("data-remove"), 10), 1); saveMine(); route();
+    });
+  }
+
+  /* ---------- Hemeroteca ---------- */
+  function renderArchive() {
+    if (!DATA.archive.length) {
+      mainEl.innerHTML = bannerHTML() +
+        '<section class="view-enter" aria-labelledby="arch-h"><div class="view-head"><div><div class="eyebrow">Últimos 30 días</div><h2 id="arch-h">Hemeroteca</h2></div></div>' +
+        '<div class="empty-box"><strong>La hemeroteca se llena sola con cada actualización diaria.</strong>' +
+        "<span>Cada mañana se guardará aquí el resumen y las noticias del día anterior, hasta un máximo de 30 días. El primer día guardado será el " +
+        esc(longDate(DATA.updated).toLowerCase()) + ".</span></div></section>";
+      return;
+    }
+    var idx = 0, team = sget("local", K.archTeam) || "ALL";
+    if (team !== "ALL" && !BY_CODE[team]) team = "ALL";
+    function draw() {
+      var day = DATA.archive[idx];
+      var s = summaryFor(team, day);
+      var items = (day.items || []).filter(function (i) { return team === "ALL" || (i.rel && i.rel[team]); });
+      var relOf = team === "ALL" ? maxRel : function (i) { return i.rel[team]; };
+      var pts = (s.points || []).map(function (p) { return "<li><span>" + rich(p) + "</span></li>"; }).join("");
+      document.getElementById("arch-body").innerHTML =
+        '<section class="brief"><div class="brief-top"><div><div class="eyebrow">' + esc(longDate(day.date)) + "</div><h2>Resumen de ese día</h2></div></div>" +
+          '<div class="brief-cols">' + (pts ? '<div class="points-wrap"><div class="eyebrow">Puntos de atención</div><ul class="points">' + pts + "</ul></div>" : "") +
+          '<p class="brief-text">' + rich(s.text) + "</p></div></section>" +
+        '<h3 class="sub-h">Noticias de ese día (' + items.length + ")</h3>" +
+        (items.length ? '<ol class="news">' + listHTML(sortItems(items, relOf), relOf, false) + "</ol>" : '<p class="empty">No hay noticias guardadas para este equipo ese día.</p>');
+    }
+    var dateOpts = DATA.archive.map(function (d, n) { return '<option value="' + n + '">' + esc(longDate(d.date)) + "</option>"; }).join("");
+    var teamOpts = '<option value="ALL">Todo el departamento</option>' + TEAMS.map(function (t) { return '<option value="' + t.code + '">' + esc(t.long) + "</option>"; }).join("");
+    mainEl.innerHTML = bannerHTML() +
+      '<section class="view-enter" aria-labelledby="arch-h">' +
+        '<div class="view-head"><div><div class="eyebrow">Últimos ' + DATA.archive.length + ' días</div><h2 id="arch-h">Hemeroteca</h2></div>' +
+          '<div class="brief-controls"><div class="select-wrap"><label for="arch-date">Día</label><select id="arch-date">' + dateOpts + "</select></div>" +
+          '<div class="select-wrap"><label for="arch-team">Equipo</label><select id="arch-team">' + teamOpts + "</select></div></div></div>" +
+        '<div id="arch-body" class="main-col"></div>' +
+      "</section>";
+    var ds = document.getElementById("arch-date"), ts = document.getElementById("arch-team");
+    ts.value = team;
+    ds.addEventListener("change", function () { idx = parseInt(ds.value, 10) || 0; draw(); });
+    ts.addEventListener("change", function () { team = ts.value; sset("local", K.archTeam, team); draw(); });
+    draw();
+  }
+
+  /* ---------- Search ---------- */
+  function renderSearch(q) {
+    var nq = norm(q);
+    var hits = sortItems(DATA.items.filter(function (i) { return itemText(i).indexOf(nq) !== -1; }), maxRel);
+    var seenUrls = {}; DATA.items.forEach(function (i) { seenUrls[i.url] = true; });
+    var past = [];
+    DATA.archive.forEach(function (day) {
+      (day.items || []).forEach(function (i) {
+        if (!seenUrls[i.url] && itemText(i).indexOf(nq) !== -1) { seenUrls[i.url] = true; past.push(i); }
+      });
+    });
+    mainEl.innerHTML =
+      '<section class="view-enter" aria-labelledby="search-h">' +
+        '<div class="view-head"><div><div class="eyebrow">Búsqueda</div><h2 id="search-h">Resultados para «' + esc(q) + "»</h2>" +
+          "<p>" + hits.length + (hits.length === 1 ? " noticia" : " noticias") + " en la edición de hoy" +
+          (past.length ? " y " + past.length + " en la hemeroteca" : "") + ". Pulsa Esc para volver.</p></div></div>" +
+        (hits.length ? '<ol class="news">' + listHTML(hits, maxRel, false) + "</ol>" : '<p class="empty">Ninguna noticia de hoy coincide con la búsqueda.</p>') +
+        (past.length ? '<h3 class="sub-h">En la hemeroteca</h3><ol class="news">' + listHTML(sortItems(past, maxRel), maxRel, false) + "</ol>" : "") +
+      "</section>";
+  }
+
+  /* ---------- Copy ---------- */
+  function findItem(id) {
+    var f = null;
+    DATA.items.some(function (i) { if (i.id === id) { f = i; return true; } return false; });
+    if (!f) DATA.archive.some(function (d) { return (d.items || []).some(function (i) { if (i.id === id) { f = i; return true; } return false; }); });
+    return f;
+  }
+  function mailTitle(code) {
+    var team = BY_CODE[code];
+    return "Portfolio Monitoring Iberia · " + (team ? team.short + " · " : "") + longDate(DATA.updated);
+  }
+  function gmailUrl(code) {
+    var body = briefPlain(code, false);
+    if (body.length > 1800) body = body.slice(0, 1800) + "…";
+    return "https://mail.google.com/mail/?view=cm&fs=1&su=" + encodeURIComponent(mailTitle(code)) + "&body=" + encodeURIComponent(body);
+  }
+  function briefMailHTML(code, withDetail) {
+    var s = summaryFor(code);
+    var team = BY_CODE[code];
+    var list = team ? teamItems(code) : sortItems(DATA.items, maxRel);
+    var relOf = team ? function (i) { return i.rel[code]; } : maxRel;
+    var h = '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#0f1f33">' +
+      "<p><b>" + esc(mailTitle(code)) + "</b><br>" + esc(team ? team.long : "Todo el departamento") + "</p>";
+    if (s.points && s.points.length) h += "<p><b>Puntos de atención</b></p><ul>" + s.points.map(function (p) { return "<li><span>" + rich(p) + "</span></li>"; }).join("") + "</ul>";
+    h += "<p>" + rich(s.text) + "</p>";
+    if (withDetail && s.detail && s.detail.length) h += "<p><b>Resumen detallado</b></p>" + s.detail.map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
+    h += "<p><b>Noticias principales</b></p><ol>" + list.slice(0, 5).map(function (i) {
+      return "<li>[" + REL_LABEL[relOf(i)].toUpperCase() + '] <a href="' + esc(i.url) + '">' + esc(i.title) + "</a> (" + esc(i.source) + ", " + fmtDate(i.date) + ")</li>";
+    }).join("") + "</ol>";
+    h += '<p style="color:#55667a;font-size:12px">Página informativa no oficial. Resúmenes propios de noticias públicas.</p></div>';
+    return h;
+  }
+  function copyRich(html, text, okMsg) {
+    try {
+      if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+        var item = new window.ClipboardItem({
+          "text/html": new Blob([html], { type: "text/html" }),
+          "text/plain": new Blob([text], { type: "text/plain" })
+        });
+        navigator.clipboard.write([item]).then(function () { toast(okMsg); }, function () { copyText(text, okMsg); });
+        return;
+      }
+    } catch (e) {}
+    copyText(text, okMsg);
+  }
+  function briefPlain(code, withDetail) {
+    var s = summaryFor(code);
+    var team = BY_CODE[code];
+    var list = team ? teamItems(code) : sortItems(DATA.items, maxRel);
+    var relOf = team ? function (i) { return i.rel[code]; } : maxRel;
+    var lines = ["Portfolio Monitoring Iberia · " + longDate(DATA.updated), team ? team.long : "Todo el departamento", ""];
+    if (s.points && s.points.length) { lines.push("Puntos de atención:"); s.points.forEach(function (p) { lines.push("• " + plain(p)); }); lines.push(""); }
+    lines.push(plain(s.text), "");
+    if (withDetail && s.detail && s.detail.length) { lines.push("Resumen detallado:"); s.detail.forEach(function (p) { lines.push(plain(p), ""); }); }
+    lines.push("Noticias principales:");
+    list.slice(0, 5).forEach(function (i, n) {
+      lines.push((n + 1) + ". [" + REL_LABEL[relOf(i)].toUpperCase() + "] " + i.title + " (" + i.source + ", " + fmtDate(i.date) + ")");
+      lines.push("   " + i.url);
+    });
+    lines.push("", "Página informativa no oficial. Resúmenes propios de noticias públicas.");
+    return lines.join("\n");
+  }
+  function itemPlain(i, rel) {
+    return "[" + REL_LABEL[rel].toUpperCase() + "] " + i.title + "\n" + i.source + " · " + fmtDate(i.date) +
+      (i.angle ? "\nClave de seguimiento: " + i.angle : "") + "\n" + i.url;
+  }
+  var toastEl = document.getElementById("toast");
+  var toastTimer = null;
+  function toast(msg) {
+    toastEl.textContent = msg; toastEl.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { toastEl.hidden = true; }, 2600);
+  }
+  var panel = document.getElementById("copy-panel");
+  function fallbackCopy(text) {
+    var ta = document.getElementById("copy-text");
+    ta.value = text; panel.hidden = false; ta.focus(); ta.select();
+  }
+  document.getElementById("copy-close").addEventListener("click", function () { panel.hidden = true; });
+  function copyText(text, okMsg) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { toast(okMsg || "Copiado."); }, function () { fallbackCopy(text); });
+        return;
+      }
+    } catch (e) {}
+    fallbackCopy(text);
+  }
+  mainEl.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-copy]"); if (!b) return;
+    var it = findItem(b.getAttribute("data-copy")); if (!it) return;
+    copyText(itemPlain(it, b.getAttribute("data-rel") || maxRel(it)), "Noticia copiada.");
+  });
+
+  /* ---------- View mode ---------- */
+  var vDet = document.getElementById("v-det"), vCmp = document.getElementById("v-cmp");
+  function applyView() {
+    document.body.classList.toggle("compact", state.compact);
+    vDet.setAttribute("aria-pressed", String(!state.compact));
+    vCmp.setAttribute("aria-pressed", String(state.compact));
+  }
+  function setCompact(on) { state.compact = on; sset("local", K.view, on ? "compact" : "detail"); applyView(); }
+  vDet.addEventListener("click", function () { setCompact(false); });
+  vCmp.addEventListener("click", function () { setCompact(true); });
+
+  /* ---------- Router ---------- */
+  var app = document.getElementById("app");
+  function setHeaderHeight() {
+    var bar = document.querySelector(".topbar");
+    if (bar && !app.hidden) document.documentElement.style.setProperty("--header-h", bar.offsetHeight + "px");
+  }
+  window.addEventListener("resize", setHeaderHeight);
+
+  function currentSlug() {
+    var slug = (location.hash || "").replace("#", "");
+    return ORDER.indexOf(slug) !== -1 ? slug : "resumen";
+  }
+  function route() {
+    var slug = currentSlug();
+    renderTabs(slug);
+    if (state.q) renderSearch(state.q);
+    else if (BY_SLUG[slug]) renderTeam(BY_SLUG[slug]);
+    else if (slug === "mi-lista") renderMine();
+    else if (slug === "hemeroteca") renderArchive();
+    else renderHome();
+    setHeaderHeight();
+  }
+  function go(slug) {
+    if (currentSlug() === slug && ("#" + slug) === location.hash) { route(); }
+    else location.hash = "#" + slug;
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------- Search input and shortcuts ---------- */
+  var qEl = document.getElementById("q");
+  var qTimer = null;
+  qEl.addEventListener("input", function () {
+    clearTimeout(qTimer);
+    qTimer = setTimeout(function () { state.q = qEl.value.trim(); route(); }, 120);
+  });
+  function clearSearch() { qEl.value = ""; state.q = ""; route(); }
+  qEl.addEventListener("keydown", function (e) { if (e.key === "Escape") { clearSearch(); qEl.blur(); } });
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a || !state.q) return;
+    qEl.value = ""; state.q = "";
+    if (a.getAttribute("href") === (location.hash || "#resumen")) { e.preventDefault(); route(); }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (app.hidden || e.ctrlKey || e.metaKey || e.altKey) return;
+    var t = e.target;
+    var typing = t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable);
+    if (typing) return;
+    if (e.key === "Escape") { if (!panel.hidden) { panel.hidden = true; return; } if (state.q) clearSearch(); return; }
+    if (e.key === "/") { e.preventDefault(); qEl.focus(); qEl.select(); return; }
+    if (e.key === "c" || e.key === "C") { setCompact(!state.compact); return; }
+    var n = e.key === "0" ? 10 : parseInt(e.key, 10);
+    if (n >= 1 && n <= ORDER.length) { if (state.q) { qEl.value = ""; state.q = ""; } go(ORDER[n - 1]); }
+  });
+
+  /* ---------- Gate ---------- */
+  var gate = document.getElementById("gate");
+  var started = false;
+
+  function openApp() {
+    gate.hidden = true;
+    app.hidden = false;
+    if (!started) {
+      started = true;
+      computeNew();
+      applyView();
+      document.getElementById("today").textContent = fmtDate(DATA.updated) + " " + DATA.updated.slice(0, 4);
+      document.getElementById("updated").textContent = (DATA.updatedLabel || "") + ".";
+      window.addEventListener("hashchange", function () { route(); window.scrollTo(0, 0); });
+    }
+    route();
+  }
+  /* Acceso */
+  function passTag(s) { var x = 5381; for (var i = 0; i < s.length; i++) x = ((x << 5) + x + s.charCodeAt(i)) | 0; return "k" + (x >>> 0).toString(36); }
+  var ACCESS = "pmi-acceso", TAG = passTag(PASSWORD);
+  function focusPw() { try { document.getElementById("pw").focus({ preventScroll: true }); } catch (e) {} }
+  function lock() {
+    sdel("session", ACCESS); sdel("local", ACCESS);
+    app.hidden = true; gate.hidden = false;
+    var pw = document.getElementById("pw");
+    pw.value = ""; document.getElementById("pw-error").textContent = ""; pw.focus();
+  }
+  document.getElementById("gate-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var pw = document.getElementById("pw");
+    var err = document.getElementById("pw-error");
+    if (pw.value.trim().toLowerCase() !== PASSWORD) {
+      err.textContent = "Contraseña incorrecta. Revísala e inténtalo de nuevo.";
+      pw.select();
+      return;
+    }
+    if (!RAW) { err.textContent = "No se han podido cargar las noticias. Recarga la página."; return; }
+    sset("session", ACCESS, TAG);
+    if (document.getElementById("remember").checked) sset("local", ACCESS, TAG);
+    err.textContent = "";
+    setData(RAW);
+    openApp();
+  });
+  document.getElementById("logout").addEventListener("click", lock);
+
+  ["pmi-radar-unlocked", "pmi-key"].forEach(function (k) { sdel("session", k); });
+  ["pmi-remember", "pmi-key-r"].forEach(function (k) { sdel("local", k); });
+  if (RAW && (sget("session", ACCESS) === TAG || sget("local", ACCESS) === TAG)) { setData(RAW); openApp(); }
+  else { sdel("local", ACCESS); focusPw(); }
+})();
+</script>
+</body>
+</html>
