@@ -349,7 +349,11 @@ footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid
   .item { grid-template-columns: 104px minmax(0, 1fr); gap: 20px; padding-block: 20px; }
   .item-title { font-size: 18px; }
   .item-sum { font-size: 16px; }
-  .tab { padding-inline: 10px; font-size: 13.5px; }
+  .tab { padding-inline: 8px; font-size: 13.5px; gap: 5px; }
+  .tab-sep { margin-inline: 4px; }
+}
+@media (min-width: 1100px) and (max-width: 1365px) {
+  .tab { font-size: 13px; padding-inline: 7px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -440,7 +444,7 @@ footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid
       <p>Esta página no es una página web oficial del BBVA y sirve meramente como página informativa. Los resúmenes son propios y cada noticia enlaza a su fuente pública original; la relevancia es una valoración orientativa para el seguimiento de operaciones. Ámbito: España y Portugal.</p>
       <p id="updated"></p>
       <p>Se actualiza automáticamente cada día hacia las 8:30 (hora peninsular).</p>
-      <p>Atajos de teclado: <kbd>1</kbd>–<kbd>9</kbd> secciones · <kbd>/</kbd> buscar · <kbd>C</kbd> vista compacta · <kbd>Esc</kbd> borrar la búsqueda.</p>
+      <p>Atajos de teclado: <kbd>1</kbd>–<kbd>9</kbd> y <kbd>0</kbd> secciones · <kbd>/</kbd> buscar · <kbd>C</kbd> vista compacta · <kbd>Esc</kbd> borrar la búsqueda.</p>
     </div>
   </footer>
 </div>
@@ -454,668 +458,14 @@ footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid
 </div>
 
 <script type="application/json" id="news-data">
-{
-  "updated": "2026-11-04",
-  "updatedLabel": "Actualizado el miércoles 4 de noviembre de 2026, 17:30 (hora peninsular)",
-  "summaries": {
-    "ALL": {
-      "text": "Jornada centrada en la temporada de resultados. **Sacyr** gana 116 M€ hasta septiembre (+87%) apoyada en sus concesiones, y **Iberdrola**, **Endesa**, **Naturgy** y **Repsol** suman 14.542 M€ (+47%), con una parte no recurrente. En Portugal, **Galp** bate su récord trimestral tras romper las negociaciones con **Moeve**. En promoción residencial, **Metrovacesa** tiene vendidas ya el 96% de sus entregas de 2026, mientras los decretos de vivienda frenan el alquiler.",
-      "points": [
-        "Separar el efecto no recurrente (inventarios y plusvalías) en los resultados de **Repsol** e **Iberdrola** antes de extrapolar ratios.",
-        "Exportadores con ventas a EE. UU. (aceite, perfumes, baldosas, piedra y confitería): alegaciones a los aranceles hasta mediados de diciembre.",
-        "Próximos resultados: **Cellnex** (5 nov), **Telefónica** (12 nov) y **Merlin Properties** (13 nov)."
-      ]
-    },
-    "ENE": {
-      "text": "**Renovalia** coloca 200 M€ en bonos privados con **Allianz GI** para una cartera merchant a 25 años, mientras la banca acorta plazos por la caída de los precios capturados. **Iberdrola**, **Endesa** y **Naturgy** mejoran beneficio hasta septiembre, y **Enagás** completa la compra del 31,5% de **Teréga**. El TTF por encima de 90 €/MWh reabre el debate sobre un nuevo tope al gas.",
-      "points": [
-        "**Renovalia**: referencia de financiación merchant a largo plazo con inversores institucionales.",
-        "**Iberdrola**: parte de su beneficio procede de la venta del negocio en México.",
-        "Riesgo regulatorio: posible nuevo tope al gas y mercado de capacidad pendiente de subastas."
-      ],
-      "detail": [
-        "**Renovalia** ha cerrado una emisión privada de bonos de hasta 200 M€, suscrita por fondos de **Allianz Global Investors**, para financiar proyectos eólicos y fotovoltaicos en desarrollo sin PPA. Los plazos llegan a 25 años en fotovoltaica y 21 en eólica, algo poco habitual en España: la banca está exigiendo más coberturas y acortando plazos por la caída de los precios capturados, y los inversores institucionales ganan terreno en el segmento merchant.",
-        "Resultados de las grandes eléctricas hasta septiembre: **Iberdrola** gana 5.816 M€ (+9,6%), con plusvalías de la venta en México; **Endesa**, 1.962 M€ (+15%); y **Naturgy**, 1.758 M€ (+5,4%). En proyectos donde actúan como sponsors u offtakers conviene separar el componente no recurrente.",
-        "**Enagás** obtiene 204 M€ de beneficio, apoyado en la venta del 40% de Enagás Renovable, y completa la compra del 31,5% de **Teréga** por 573 M€. Más del 80% de su deuda es a tipo fijo, con un coste del 2,1% y una vida media de 3,9 años.",
-        "En almacenamiento, **Grenergy** firmó en julio la primera financiación sin recurso de una batería stand-alone en España (Oviedo, 618 MWh) con **Santander** y **SMBC**, apoyada en un acuerdo de tolling financiero. El mercado de capacidad aprobado en septiembre ofrecerá contratos de hasta 15 años a baterías nuevas, con coeficientes de firmeza que se fijarán en cada subasta.",
-        "En lo regulatorio, el TTF supera los 90 €/MWh y el Gobierno estudia recuperar el tope al gas, al que se oponen las grandes eléctricas. En Portugal, el BEI suma un tercer tramo de 300 M€ para las redes de distribución de **EDP**, de los que 213 M€ van a Portugal."
-      ]
-    },
-    "INF": {
-      "text": "**Sacyr** gana 116 M€ hasta septiembre (+87%) apoyada en su negocio concesional y destaca su grado de inversión de S&P. **Ferrovial** eleva un 21,8% su EBITDA ajustado y **Aena** gana 1.774,7 M€ con el DORA III ya aprobado. En Portugal, **Mota-Engil** y **DST** compiten por la segunda PPP de la alta velocidad.",
-      "points": [
-        "**Sacyr**: seguir las distribuciones de concesiones frente a la deuda con recurso.",
-        "**Aena**: deuda neta de 5.845 M€ (1,47x EBITDA) y tarifas cerradas hasta 2031.",
-        "**Enagás**: compra del 31,5% de **Teréga** y primeras fases de la red de hidrógeno."
-      ],
-      "detail": [
-        "**Sacyr** cierra los nueve meses con un beneficio de 116 M€ (+87%), ingresos un 11% mayores y un flujo de caja operativo un 21% superior. **Sacyr Concesiones** ingresa 1.536 M€ (+21%) y el valor de su cartera concesional es de 4.316 M€. En 2026 ha sumado la Ruta 57 (Chile) y el Museo de Ciencias de Ontario, y destaca la calificación BBB- con perspectiva estable de S&P, que se suma a la de Morningstar DBRS.",
-        "**Ferrovial** eleva su EBITDA ajustado un 21,8% en términos comparables, con un crecimiento del 14,7% en autopistas. La **407 ETR** aprueba un dividendo de 1.050 M C$ y el grupo recibe 524 M€ de dividendos de proyectos, con una caja neta de 1.700 M€ excluidos los proyectos. En España busca socios para su campus de centros de datos de Alcobendas, de unos 1.000 M€.",
-        "**Aena** gana 1.774,7 M€ hasta septiembre (+12,4%), con 257,2 millones de pasajeros en la red española (+4,1%). El DORA III 2027-2031, aprobado en septiembre, fija una subida tarifaria del 0,33% anual y 9.991 M€ de inversión regulada. Su deuda neta es de 5.845 M€, 1,47 veces el EBITDA.",
-        "**Enagás** tiene más del 80% de su deuda a tipo fijo, lo que limita el impacto de una nueva subida del BCE, y completa la compra del 31,5% de **Teréga** por 573 M€, además de avanzar en la ingeniería del corredor de hidrógeno BarMar.",
-        "En Portugal, los consorcios liderados por **Mota-Engil** y **DST** compiten por el tramo Oiã-Soure (PPP2) de la alta velocidad Porto-Lisboa. El BEI anuncia financiación para la recuperación tras los temporales y para las redes de **EDP**."
-      ]
-    },
-    "RE": {
-      "text": "**Metrovacesa** ingresa 465 M€ hasta septiembre (+75%) y tiene vendidas el 96% de sus entregas de 2026 y el 83% de las de 2027, con un LTV del 10,6%. Los decretos de vivienda han retirado más de 4.200 pisos del alquiler en diez días, lo que afecta a las tesis build-to-rent. **Ferrovial** busca socios para su campus de centros de datos en Alcobendas.",
-      "points": [
-        "**Metrovacesa**: dividendo extraordinario de 1 € por acción (unos 152 M€) que votará la junta del 24 de noviembre.",
-        "Build-to-rent: revisar hipótesis de renta, ocupación y salida ante los decretos de vivienda.",
-        "**Merlin Properties** presenta resultados el 13 de noviembre."
-      ],
-      "detail": [
-        "**Metrovacesa** ingresa 465 M€ hasta septiembre (+75%), con 1.172 entregas (+44%) a un precio medio de 350.000 € y un margen bruto del 27,4%. Su cartera de preventas suma 2.851 viviendas por 1.052 M€ y cubre el 96% de las entregas previstas para 2026, el 83% de las de 2027 y el 45% de las de 2028. La deuda neta es de 227 M€ (LTV del 10,6%) y propone un dividendo extraordinario de 1 € por acción, unos 152 M€, que votará la junta del 24 de noviembre.",
-        "Según la FAI, los decretos de vivienda aprobados en octubre han provocado la retirada o el desvío de 4.235 pisos del alquiler habitual y el bloqueo de 1.523 firmas en diez días, con una caída prevista del 25-30% en contratos. En promociones build-to-rent conviene revisar renta, ocupación y salida, y el posible trasvase a venta.",
-        "**Ferrovial** busca socios para financiar su campus de centros de datos de Alcobendas, de unos 1.000 M€, que desarrollará por fases según la disponibilidad de energía y la contratación de clientes. El BEI presta 495 M€ al **Institut Català de Finances** para 5.000 viviendas públicas en Cataluña, con riesgo de retrasos por licencias y litigios.",
-        "En el conjunto del mercado, la inversión inmobiliaria acumula 13.310 M€ hasta septiembre (+22,7%), aunque el tercer trimestre se enfría y la rentabilidad prime logística sube 15 pb, hasta el 5,00%."
-      ]
-    },
-    "COR": {
-      "text": "Temporada de resultados con fuerte crecimiento en **Repsol**, **Galp**, **Sacyr**, **Indra** y **Aena**. **Galp** eleva su objetivo de EBITDA 2026 a cerca de 5.000 M€ tras romper las negociaciones con **Moeve**, y **Repsol** lanza una tercera recompra de 950 M€. Próximos resultados: **Cellnex** (5 nov), **Telefónica** (12 nov) e **Inditex** (2 dic).",
-      "points": [
-        "**Repsol** y **Galp**: beneficios muy ligados al refino y al crudo; vigilar la normalización de márgenes.",
-        "**Indra**: cartera de 22.165 M€ (+133%) y nuevo plan estratégico en noviembre.",
-        "Exportadores con ventas a EE. UU.: aranceles propuestos por unos 2.800 M€."
-      ],
-      "detail": [
-        "**Repsol** gana 5.006 M€ hasta septiembre, de los que 943 M€ proceden de la revalorización de inventarios (5.419 M€ ajustado). Mantiene 11.922 M€ de liquidez, 4,14 veces sus vencimientos a corto plazo, prevé 11.500 M€ de inversión en España hasta 2030 y lanza una tercera recompra de 950 M€.",
-        "**Galp** bate su récord trimestral con 682 M€ de beneficio entre julio y septiembre (+68%) y 1.494 M€ en nueve meses, impulsada por un margen de refino de 33,8 $/barril y el arranque de Bacalhau en Brasil. Eleva su objetivo de EBITDA 2026 a cerca de 5.000 M€. Las negociaciones con **Moeve** para unir refino y comercialización han terminado sin acuerdo.",
-        "Las grandes energéticas suman 14.542 M€ de beneficio hasta septiembre (+47%): **Iberdrola** 5.816 M€ (+9,6%, con plusvalías de México), **Endesa** 1.962 M€ (+15%) y **Naturgy** 1.758 M€ (+5,4%).",
-        "**Indra** gana 355 M€ (+22%) con ingresos de 4.645 M€ (+29%) y una cartera de 22.165 M€ (+133%), impulsada por defensa y espacio, y presentará un nuevo plan estratégico en noviembre. **Aena** y **Ferrovial** mantienen crecimientos de doble dígito y **Sacyr** destaca su grado de inversión de S&P.",
-        "En comercio exterior, EE. UU. estudia aranceles por unos 2.800 M€ sobre aceite, perfumes, baldosas, piedra y confitería españoles, con alegaciones hasta mediados de diciembre y un Gobierno previsiblemente en funciones tras las elecciones del 29 de noviembre."
-      ]
-    },
-    "STF": {
-      "text": "**Repsol** y **Galp** cierran un trimestre récord gracias al refino, con **Galp** operando Sines cerca de su capacidad máxima y triplicando sus exportaciones. La propuesta de aranceles de EE. UU. afectaría a exportadores españoles de aceite, perfumes, baldosas, piedra y confitería. El TTF por encima de 90 €/MWh y el posible tope al gas añaden incertidumbre a operaciones con energéticas.",
-      "points": [
-        "**Galp**: tras romper con **Moeve** se mantiene la estructura actual de su refino y distribución.",
-        "Exportadores agroalimentarios y cerámicos: revisar la exposición a EE. UU. en líneas de circulante.",
-        "**Repsol**: 943 M€ de su beneficio son efecto inventario; no extrapolar."
-      ],
-      "detail": [
-        "**Galp** gana 682 M€ en el tercer trimestre (+68%) con un margen de refino de 33,8 $/barril, frente a 9,5 $ hace un año, y la refinería de Sines operando cerca de su capacidad máxima. Sus exportaciones se han más que triplicado en nueve meses, hasta 640 M€, y los mercados internacionales aportan el 91% del EBITDA.",
-        "Las negociaciones entre **Galp** y **Moeve** para combinar sus negocios de refino y comercialización han terminado sin acuerdo, de modo que ambos grupos mantienen su estructura actual en la península.",
-        "**Repsol** gana 5.006 M€ hasta septiembre, con 943 M€ de efecto inventario, apoyada en mayores márgenes de refino y en ganancias de trading. Su liquidez de 11.922 M€ cubre 4,14 veces los vencimientos a corto plazo.",
-        "EE. UU. estudia aranceles por unos 2.800 M€ en cinco categorías de productos españoles (aceite de oliva, perfumes, baldosas, piedra y confitería) como represalia por el veto a escalas de buques con armas para Israel. El plazo de alegaciones cierra a mediados de diciembre.",
-        "El gas TTF supera los 90 €/MWh por primera vez desde 2022 y el Gobierno estudia recuperar el tope al gas, lo que afectaría a los márgenes de comercializadoras y generadoras."
-      ]
-    },
-    "LBO": {
-      "text": "Actividad mid-market en España: **Standard Investment** entra en **GasExpress**, **Nazca** cierra la venta de **Teltronic** a **Amper** y **MCH** lidera una ampliación de 300 M€ en **Europastry**, con **COFIDES** como coinversor. Las participadas exportadoras deben vigilar la propuesta de aranceles de EE. UU.",
-      "points": [
-        "**Europastry**: ampliación de 300 M€ para crecer en Estados Unidos.",
-        "**Teltronic**: salida de **Nazca** en algo más de un año, referencia de múltiplos en defensa.",
-        "**GasExpress**: márgenes sensibles al precio del combustible."
-      ],
-      "detail": [
-        "**Europastry** completa una ampliación de capital de 300 M€ liderada por **MCH**, en la que **COFIDES** invierte 49,6 M€, para financiar su crecimiento en Estados Unidos.",
-        "**Nazca** cierra la venta de **Teltronic** a **Amper**, una operación anunciada en mayo y valorada en hasta 225 M€. **Nazca** había comprado **Teltronic** a **Hytera** en julio de 2025 con su fondo de defensa y entra ahora en el capital de **Amper**.",
-        "El fondo neerlandés **Standard Investment** toma una participación en la valenciana **GasExpress**, que explota más de 50 estaciones de servicio automáticas de bajo coste en España.",
-        "Para las participadas exportadoras, la propuesta de aranceles de EE. UU. sobre aceite, perfumes, baldosas, piedra y confitería es el principal riesgo comercial de las próximas semanas."
-      ]
-    }
-  },
-  "indicators": [
-    {
-      "group": "Tipos",
-      "label": "Facilidad de depósito BCE",
-      "value": "2,50%",
-      "change": "sin cambios",
-      "dir": "flat",
-      "note": "Reunión del 29 oct",
-      "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp261029~9a493adf17.es.html",
-      "source": "BCE"
-    },
-    {
-      "group": "Tipos",
-      "label": "Euríbor 12M · media de octubre",
-      "value": "3,239%",
-      "change": "0,008 pp vs septiembre",
-      "dir": "down",
-      "note": "Septiembre: 3,247%",
-      "url": "https://www.gibobs.com/blog/euribor/",
-      "source": "Gibobs"
-    },
-    {
-      "group": "Tipos",
-      "label": "Bono español a 10 años",
-      "value": "3,930%",
-      "change": "3,2 pb",
-      "dir": "up",
-      "note": "Cierre del 3 nov · prima de riesgo: 60 pb",
-      "url": "https://www.economiaresponsablefinanzas.com/inversiones/mercados/mercados-hoy-3-noviembre-2026/",
-      "source": "Economía Responsable"
-    },
-    {
-      "group": "Energía y materias primas",
-      "label": "Pool eléctrico (OMIE) · media diaria",
-      "value": "246,01 €/MWh",
-      "change": "31,9% vs 3 nov",
-      "dir": "up",
-      "note": "4 nov · hora más cara 18-19 h",
-      "url": "https://tarifaluzhora.es/precio-luz-diario/2026-11-04",
-      "source": "Tarifaluzhora (datos OMIE)"
-    },
-    {
-      "group": "Energía y materias primas",
-      "label": "Gas TTF",
-      "value": "> 90 €/MWh",
-      "change": "máximo desde 2022",
-      "dir": "up",
-      "note": "Dato del 23 oct",
-      "url": "https://www.elespanol.com/invertia/empresas/energia/20261023/alerta-mercado-nuevo-tope-gas-precio-ttf-solo-euros-nivel-activo-mecanismo-iberico/1003744431545_0.html",
-      "source": "El Español"
-    },
-    {
-      "group": "Energía y materias primas",
-      "label": "Brent",
-      "value": "103,60 $",
-      "change": "1,1%",
-      "dir": "down",
-      "note": "Cierre del 3 nov, tras caer un 7,6% el 2 nov",
-      "url": "https://www.economiaresponsablefinanzas.com/inversiones/mercados/mercados-hoy-3-noviembre-2026/",
-      "source": "Economía Responsable"
-    },
-    {
-      "group": "Mercados",
-      "label": "Ibex 35",
-      "value": "+2%",
-      "change": "sesión del 4 nov",
-      "dir": "up",
-      "note": "Cerró el 3 nov en 18.807,2 (−0,79%)",
-      "url": "https://es.finance.yahoo.com/noticias/ibex-35-alza-victoria-dem%C3%B3crata-094803994.html",
-      "source": "Investing.com"
-    },
-    {
-      "group": "Mercados",
-      "label": "Euro / dólar",
-      "value": "1,1187",
-      "change": "0,06%",
-      "dir": "up",
-      "note": "Cierre del 3 nov",
-      "url": "https://www.economiaresponsablefinanzas.com/inversiones/mercados/mercados-hoy-3-noviembre-2026/",
-      "source": "Economía Responsable"
-    }
-  ],
-  "agenda": [
-    {
-      "date": "5 nov",
-      "text": "Cellnex: resultados del tercer trimestre",
-      "url": "https://ad-hoc-news.de/boerse/news/corporate-news/cellnex-stock-enters-q3-results-week-after-fitch-rating-reaffirmed/70455441"
-    },
-    {
-      "date": "12 nov",
-      "text": "Telefónica: resultados enero-septiembre",
-      "url": "https://aiacciones.es/calendario/index.html"
-    },
-    {
-      "date": "13 nov",
-      "text": "Merlin Properties: resultados 9M",
-      "url": "https://ir.merlinproperties.com/inversores/calendario/"
-    },
-    {
-      "date": "24 nov",
-      "text": "Metrovacesa: junta extraordinaria (dividendo de 1 €)",
-      "url": "https://www.bolsamania.com/noticias/resultados-anuncios/metrovacesa-eleva-ingresos-septiembre-75-dividendo-1-euro-diciembre--23903423.html"
-    },
-    {
-      "date": "29 nov",
-      "text": "Elecciones generales en España",
-      "url": "https://www.moncloa.com/2026/10/16/aranceles-eeuu-espana-exportaciones-3449641/"
-    },
-    {
-      "date": "2 dic",
-      "text": "Inditex: resultados de nueve meses",
-      "url": "https://www.baremus.com/noticias/calendario-resultados-ibex-35-tercer-trimestre-2026/"
-    },
-    {
-      "date": "16-17 dic",
-      "text": "Reunión de política monetaria del BCE",
-      "url": "https://www.gibobs.com/blog/euribor/"
-    }
-  ],
-  "items": [
-    {
-      "id": "sacyr-9m",
-      "date": "2026-11-03",
-      "source": "elEconomista",
-      "url": "https://www.eleconomista.es/infraestructuras-servicios/noticias/14025381/11/26/sacyr-dispara-su-beneficio-un-87-hasta-los-116-millones-gracias-al-impulso-de-las-concesiones.html",
-      "title": "Sacyr gana 116 M€ hasta septiembre (+87%) apoyada en su negocio concesional",
-      "summary": "La cifra de negocios crece un 11%, el EBITDA un 9% y el flujo de caja operativo un 21%. Suma dos concesiones en 2026, la Ruta 57 en Chile y el Museo de Ciencias de Ontario, y el valor de su cartera concesional se sitúa en 4.316 M€.",
-      "angle": "Sacyr Concesiones ingresa 1.536 M€ (+21%): seguir las distribuciones de las concesiones frente a la deuda con recurso.",
-      "rel": {
-        "INF": "alta",
-        "COR": "alta"
-      },
-      "sourceType": "prensa",
-      "signal": "resultados"
-    },
-    {
-      "id": "repsol-3t",
-      "date": "2026-10-29",
-      "source": "Repsol",
-      "url": "https://www.repsol.com/es/sala-prensa/notas-prensa/2026/repsol-redobla-compromiso-espana-11500-millones-proyectos-hasta-2030/index.cshtml",
-      "title": "Repsol gana 5.006 M€ hasta septiembre y lanza una tercera recompra de 950 M€",
-      "summary": "El resultado incluye 943 M€ por revalorización de inventarios; el ajustado es de 5.419 M€. Prevé 11.500 M€ en proyectos en España hasta 2030, el 60% junto a sus grandes centros industriales.",
-      "angle": "Liquidez de 11.922 M€, equivalente a 4,14 veces sus vencimientos de deuda a corto plazo.",
-      "rel": {
-        "COR": "alta",
-        "ENE": "media",
-        "STF": "media"
-      },
-      "sourceType": "primaria",
-      "signal": "resultados"
-    },
-    {
-      "id": "renovalia-bonos",
-      "date": "2026-10-28",
-      "source": "El Periódico de la Energía",
-      "url": "https://elperiodicodelaenergia.com/renovalia-firma-una-financiacion-de-200-millones-de-euros-para-su-cartera-eolica-y-fotovoltaica-en-desarrollo-en-espana",
-      "title": "Renovalia coloca 200 M€ en bonos privados con Allianz GI para una cartera merchant",
-      "summary": "Emisión privada a hasta 25 años en fotovoltaica y 21 en eólica para proyectos en desarrollo sin PPA, con la opción de incorporarlos más adelante. El artículo señala que la banca exige más coberturas y acorta plazos por la caída de los precios capturados.",
-      "angle": "Inversores institucionales compiten con la banca en plazo y en apetito por riesgo merchant.",
-      "rel": {
-        "ENE": "alta"
-      },
-      "sourceType": "sectorial",
-      "signal": "liquidez"
-    },
-    {
-      "id": "aranceles-eeuu",
-      "date": "2026-10-16",
-      "source": "Moncloa.com",
-      "url": "https://www.moncloa.com/2026/10/16/aranceles-eeuu-espana-exportaciones-3449641/",
-      "title": "EE. UU. estudia aranceles a España por unos 2.800 M€ en aceite, perfumes y baldosas",
-      "summary": "La medida responde al veto español al atraque de buques con armas para Israel y afecta a cinco categorías, incluidas piedra y confitería. El plazo de alegaciones cierra a mediados de diciembre, previsiblemente con un Gobierno en funciones tras el 29 de noviembre.",
-      "angle": "Exportadores agroalimentarios y cerámicos con financiación de circulante o de exportación.",
-      "rel": {
-        "STF": "alta",
-        "COR": "alta",
-        "LBO": "media"
-      },
-      "sourceType": "prensa",
-      "signal": "regulatorio"
-    },
-    {
-      "id": "decretos-vivienda",
-      "date": "2026-10-13",
-      "source": "The Objective",
-      "url": "https://theobjective.com/economia/2026-10-13/decretos-viviendas-5-758-operaciones/",
-      "title": "Los decretos de vivienda retiran 4.235 pisos del alquiler en diez días, según la FAI",
-      "summary": "La federación suma 5.758 operaciones afectadas entre retiradas y firmas bloqueadas, y prevé una caída del 25-30% de los contratos de alquiler en las próximas semanas, con trasvase de pisos a la venta.",
-      "angle": "Hipótesis de renta, ocupación y salida en promociones build-to-rent financiadas.",
-      "rel": {
-        "RE": "alta"
-      },
-      "sourceType": "prensa",
-      "signal": "regulatorio"
-    },
-    {
-      "id": "europastry-mch",
-      "date": "2026-11-04",
-      "source": "Webcapitalriesgo",
-      "url": "https://www.webcapitalriesgo.com/cofides-invierte-e496m-en-europastry-en-una-ampliacion-de-e300m-liderada-por-mch-para-su-crecimiento-en-estados-unidos/",
-      "title": "COFIDES invierte 49,6 M€ en Europastry en una ampliación de 300 M€ liderada por MCH",
-      "summary": "Los fondos se destinan al crecimiento de la panificadora en Estados Unidos.",
-      "angle": "Expansión internacional financiada con capital en una participada de private equity.",
-      "rel": {
-        "LBO": "media",
-        "COR": "media"
-      },
-      "sourceType": "sectorial",
-      "signal": "liquidez"
-    },
-    {
-      "id": "bei-icf",
-      "date": "2026-11-03",
-      "source": "Moncloa.com",
-      "url": "https://www.moncloa.com/2026/11/03/vivienda-publica-cataluna-bei-icf-3461129/",
-      "title": "El BEI presta 495 M€ al ICF para 5.000 viviendas públicas en Cataluña",
-      "summary": "La operación combina obra nueva y rehabilitación y se apoya en suelo público ya disponible. El artículo advierte del riesgo de retrasos por licencias y litigios urbanísticos.",
-      "angle": "Plazos de ejecución en promoción asequible con participación pública.",
-      "rel": {
-        "RE": "baja"
-      },
-      "sourceType": "prensa",
-      "signal": "liquidez"
-    },
-    {
-      "id": "feijoo-credito",
-      "date": "2026-11-03",
-      "source": "PressDigital",
-      "url": "https://www.pressdigital.es/articulo/economia/2026-11-03/6075841-feijoo-abordara-banca-condiciones-crediticias-construir-millon-viviendas-espana",
-      "title": "Feijóo plantea negociar con la banca el crédito promotor para un millón de viviendas",
-      "summary": "El presidente del PP anunció que se sentará con las entidades para abordar las condiciones del crédito promotor y del hipotecario, con el objetivo de construir un millón de viviendas.",
-      "angle": "Posibles cambios en el marco del crédito promotor tras las elecciones del 29 de noviembre.",
-      "rel": {
-        "RE": "baja"
-      },
-      "sourceType": "prensa",
-      "signal": "regulatorio"
-    },
-    {
-      "id": "gasexpress",
-      "date": "2026-10-29",
-      "source": "Webcapitalriesgo",
-      "url": "https://www.webcapitalriesgo.com/standard-investment-entra-en-la-valenciana-gasexpress/",
-      "title": "Standard Investment entra en GasExpress, red valenciana de gasolineras automáticas",
-      "summary": "El fondo neerlandés toma una participación en la compañía valenciana, que explota más de 50 estaciones de servicio de bajo coste en España.",
-      "angle": "Sensibilidad de márgenes de combustible con el Brent por encima de 100 $.",
-      "rel": {
-        "LBO": "media"
-      },
-      "sourceType": "sectorial",
-      "signal": "mna"
-    },
-    {
-      "id": "teltronic-cierre",
-      "date": "2026-11-03",
-      "source": "Webcapitalriesgo",
-      "url": "https://www.webcapitalriesgo.com/nazca-cierra-la-venta-de-teltronic-a-grupo-amper/",
-      "title": "Nazca cierra la venta de Teltronic a Amper",
-      "summary": "Culmina la operación anunciada en mayo, valorada en hasta 225 M€. Nazca, que compró Teltronic a Hytera en julio de 2025 con su fondo de defensa, entra en el capital de Amper.",
-      "angle": "Salida en algo más de un año: referencia de múltiplos en defensa y comunicaciones críticas.",
-      "rel": {
-        "LBO": "media",
-        "COR": "baja"
-      },
-      "sourceType": "sectorial",
-      "signal": "mna"
-    },
-    {
-      "id": "bpce-sabadell",
-      "date": "2026-11-02",
-      "source": "Euribor.com.es",
-      "url": "https://www.euribor.com.es/2026/11/02/bpce-toma-el-7-de-sabadell-y-abre-la-puerta-al/",
-      "title": "BPCE confirma un 7% en Sabadell con margen para subir hasta el 9,9%",
-      "summary": "Ambas entidades exploran acuerdos en banca de inversión, leasing de bienes de equipo, crédito al consumo y clientes transfronterizos.",
-      "angle": "Cambios en la competencia de banca corporativa y de inversión en España.",
-      "rel": {
-        "COR": "baja"
-      },
-      "sourceType": "analisis",
-      "signal": "mna"
-    },
-    {
-      "id": "aena-9m",
-      "date": "2026-10-28",
-      "source": "El Español",
-      "url": "https://www.elespanol.com/invertia/empresas/turismo/20261028/aena-dispara-beneficio-millones-euros-primeros-meses-ano/1003744437262_0.html",
-      "title": "Aena gana 1.774,7 M€ hasta septiembre (+12,4%) con el DORA III ya aprobado",
-      "summary": "EBITDA de 3.077,9 M€ y 257,2 millones de pasajeros en la red española (+4,1%). El DORA III 2027-2031 fija una senda tarifaria de +0,33% anual y 9.991 M€ de inversión regulada.",
-      "angle": "Deuda neta de 5.845 M€, equivalente a 1,47 veces el EBITDA.",
-      "rel": {
-        "INF": "media",
-        "COR": "media"
-      },
-      "sourceType": "prensa",
-      "signal": "resultados"
-    },
-    {
-      "id": "bei-portugal",
-      "date": "2026-10-28",
-      "source": "EuropaWire",
-      "url": "https://news.europawire.eu/eib-group-marks-50-years-of-investment-in-portugal-and-outlines-new-financing-for-national-priorities/eu-press-release/2026/10/28/12/57/06/184674/",
-      "title": "El BEI celebra 50 años en Portugal con financiación para recuperación y redes de EDP",
-      "summary": "Anuncia 750 M€ para la recuperación tras los temporales (250 M€ al Estado y 500 M€ al Banco Português de Fomento) y un tercer tramo de 300 M€ para las redes de distribución de EDP, 213 M€ de ellos en Portugal.",
-      "angle": "Liquidez multilateral que compite con la banca en grandes corporates e infraestructura en Portugal.",
-      "rel": {
-        "INF": "media",
-        "ENE": "media",
-        "COR": "baja"
-      },
-      "sourceType": "primaria",
-      "signal": "liquidez"
-    },
-    {
-      "id": "ferrovial-9m",
-      "date": "2026-10-27",
-      "source": "Investing.com",
-      "url": "https://es.investing.com/news/stock-market-news/ferrovial-publica-solidos-resultados-de-los-primeros-9m-2026-3893361",
-      "title": "Ferrovial eleva un 21,8% su EBITDA ajustado en los nueve primeros meses",
-      "summary": "Los ingresos de autopistas crecen un 14,7% en términos comparables y la 407 ETR aprueba un dividendo de 1.050 M C$. La cartera de construcción marca un récord de 19.000 M€, el 15% en España.",
-      "angle": "Recibe 524 M€ de dividendos de proyectos y mantiene caja neta de 1.700 M€ excluidos los proyectos de infraestructura.",
-      "rel": {
-        "INF": "media",
-        "COR": "media"
-      },
-      "sourceType": "prensa",
-      "signal": "resultados"
-    },
-    {
-      "id": "inversion-inmobiliaria",
-      "date": "2026-10-21",
-      "source": "Hi Retail",
-      "url": "https://hiretail.es/analisis-y-estudios/la-inversion-inmobiliaria-en-espana-crece-un-227-hasta-septiembre-y-supera-los-13-300me/",
-      "title": "La inversión inmobiliaria alcanza 13.310 M€ hasta septiembre (+22,7%)",
-      "summary": "El tercer trimestre se enfría, con 3.145 M€ (-6,9%). BNP Paribas Real Estate prevé cerrar 2026 en torno a 18.000 M€, un año histórico.",
-      "angle": "La rentabilidad prime logística sube 15 pb hasta el 5,00%: vigilar valoraciones y LTV.",
-      "rel": {
-        "RE": "baja"
-      },
-      "sourceType": "sectorial",
-      "signal": "mercado"
-    },
-    {
-      "id": "mercado-capacidad",
-      "date": "2026-09-17",
-      "source": "pv magazine España",
-      "url": "http://www.pv-magazine.es/2026/09/17/espana-crea-el-mercado-de-capacidad-que-remunera-la-potencia-firme-de-baterias-generacion-y-demanda/",
-      "title": "El BOE crea el mercado de capacidad: hasta 15 años de contrato para baterías nuevas",
-      "summary": "La Orden TED/966/2026 establece subastas pay-as-bid y un coeficiente de firmeza por tecnología que se fijará antes de cada subasta. En baterías, la potencia firme no podrá superar la capacidad de acceso a la red.",
-      "angle": "Ingresos contratados que pueden hacer bancable el almacenamiento stand-alone.",
-      "rel": {
-        "ENE": "media"
-      },
-      "sourceType": "sectorial",
-      "signal": "regulatorio"
-    },
-    {
-      "id": "almaraz-2030",
-      "date": "2026-08-14",
-      "source": "Euronews",
-      "url": "https://es.euronews.com/my-europe/2026/08/14/el-gobierno-de-espana-prorroga-la-central-nuclear-de-almaraz-hasta-2030-y-aplaza-su-cierre",
-      "title": "El Gobierno prorroga Almaraz hasta 2030 y aplaza tres años su cierre",
-      "summary": "La decisión reabre el debate sobre el calendario de cierre del resto del parque nuclear español.",
-      "angle": "Oferta firme del sistema y curva de precios a medio plazo.",
-      "rel": {
-        "ENE": "baja"
-      },
-      "sourceType": "prensa",
-      "signal": "regulatorio"
-    },
-    {
-      "id": "ferrovial-datacenter",
-      "date": "2026-08-03",
-      "source": "Vozpópuli",
-      "url": "https://www.vozpopuli.com/economia/empresas/ferrovial-busca-socios-para-financiar-su-milmillonario-campus-de-centros-de-datos-en-espana.html",
-      "title": "Ferrovial busca socios para financiar su campus de centros de datos en Alcobendas",
-      "summary": "Inversión estimada de unos 1.000 M€, a desarrollar por fases según disponibilidad de energía y contratación de clientes, combinando capital de terceros y deuda.",
-      "angle": "Pipeline de financiación de data centers con riesgo de comercialización.",
-      "rel": {
-        "INF": "baja",
-        "RE": "baja"
-      },
-      "sourceType": "prensa",
-      "signal": "liquidez"
-    },
-    {
-      "id": "grenergy-bess",
-      "date": "2026-07-22",
-      "source": "Energías Renovables",
-      "url": "https://www.energias-renovables.com/almacenamiento/grenergy-cierra-una-financiaci-n-de-100-20260722",
-      "title": "Grenergy firma la primera financiación sin recurso de una batería stand-alone en España",
-      "summary": "Santander y SMBC aportan 100 M€ para el proyecto Oviedo, de 618 MWh, que en febrero firmó el primer acuerdo de tolling financiero para baterías stand-alone en el país.",
-      "angle": "Precedente de estructura con tolling para financiar almacenamiento.",
-      "rel": {
-        "ENE": "baja"
-      },
-      "sourceType": "sectorial",
-      "signal": "liquidez"
-    },
-    {
-      "id": "lav-portugal",
-      "date": "2026-07-06",
-      "source": "ECO",
-      "url": "https://eco.sapo.pt/2026/07/06/consorcios-da-mota-e-dst-disputam-segunda-ppp-da-alta-velocidade/",
-      "title": "Mota-Engil y DST pujan por la segunda PPP de la alta velocidad Porto-Lisboa",
-      "summary": "Ambos consorcios presentaron ofertas para el tramo Oiã-Soure, la segunda parceria público-privada de la línea. Se espera una competencia a dos.",
-      "angle": "Pipeline de financiación PPP en Portugal tras el tramo Porto-Oiã.",
-      "rel": {
-        "INF": "media"
-      },
-      "sourceType": "prensa",
-      "signal": "licitacion"
-    },
-    {
-      "id": "ttf-90",
-      "date": "2026-10-23",
-      "source": "El Español",
-      "sourceType": "prensa",
-      "signal": "regulatorio",
-      "url": "https://www.elespanol.com/invertia/empresas/energia/20261023/alerta-mercado-nuevo-tope-gas-precio-ttf-solo-euros-nivel-activo-mecanismo-iberico/1003744431545_0.html",
-      "title": "El TTF supera los 90 €/MWh y el Gobierno estudia recuperar el tope al gas",
-      "summary": "Es la primera vez desde 2022 y queda a unos 6 €/MWh del nivel que activó el mecanismo ibérico. Las reservas europeas están por debajo de la media de cinco años y las grandes eléctricas se oponen a una nueva intervención.",
-      "angle": "Riesgo regulatorio sobre los ingresos de la generación merchant y sobre el coste energético de clientes industriales.",
-      "rel": {
-        "ENE": "alta",
-        "COR": "media",
-        "STF": "media"
-      }
-    },
-    {
-      "id": "sacyr-rating",
-      "date": "2026-11-03",
-      "source": "Empresa Exterior",
-      "sourceType": "sectorial",
-      "signal": "rating",
-      "url": "https://empresaexterior.com/sacyr-dispara-su-beneficio-un-87-hasta-los-116-millones-y-eleva-su-flujo-de-caja-a-930-millones/",
-      "title": "Sacyr destaca su grado de inversión de S&P (BBB-, perspectiva estable) al presentar resultados",
-      "summary": "La calificación de S&P obtenida en 2026 se suma a la que ya tenía de Morningstar DBRS, según la información difundida con las cuentas de nueve meses.",
-      "angle": "El grado de inversión abarata la refinanciación corporativa y da soporte a la deuda con recurso del grupo.",
-      "rel": {
-        "COR": "media",
-        "INF": "media"
-      }
-    },
-    {
-      "id": "fitch-portugal",
-      "date": "2026-09-04",
-      "source": "Euronews",
-      "sourceType": "prensa",
-      "signal": "rating",
-      "url": "https://www.euronews.com/business/2026/09/05/fitch-upgrades-portugals-rating-to-a-and-says-outlook-is-stable",
-      "title": "Fitch sube el rating de Portugal a A+ con perspectiva estable, su mejor nota en 15 años",
-      "summary": "La agencia destaca la mejora de las finanzas públicas, el compromiso con la prudencia fiscal y los superávits por cuenta corriente. Señala como riesgos la deuda aún elevada, el gasto en defensa y la presión en vivienda.",
-      "angle": "Mejora el techo soberano de corporates, bancos y concesiones portuguesas.",
-      "rel": {
-        "COR": "baja",
-        "INF": "baja"
-      }
-    },
-    {
-      "id": "energeticas-9m",
-      "date": "2026-10-29",
-      "source": "Infobae",
-      "sourceType": "prensa",
-      "signal": "resultados",
-      "url": "https://www.infobae.com/espana/2026/10/29/las-energeticas-disparan-su-beneficio-un-47-hasta-septiembre-por-el-alza-del-crudo-ganan-14542-millones-y-repsol-lidera-con-una-subida-del-325/",
-      "title": "Iberdrola, Endesa, Naturgy y Repsol ganan 14.542 M€ hasta septiembre, un 47% más",
-      "summary": "Iberdrola gana 5.816 M€ (+9,6%), con plusvalías de la venta en México; Endesa, 1.962 M€ (+15%); y Naturgy, 1.758 M€ (+5,4%). Repsol lidera la subida con 5.006 M€.",
-      "angle": "Parte del beneficio es no recurrente (inventarios y plusvalías): separarlo al valorar la capacidad de pago de sponsors y offtakers.",
-      "rel": {
-        "COR": "media",
-        "ENE": "media"
-      }
-    },
-    {
-      "id": "galp-3t",
-      "date": "2026-10-26",
-      "source": "ECO",
-      "sourceType": "prensa",
-      "signal": "resultados",
-      "url": "https://eco.sapo.pt/2026/10/26/galp-bate-recorde-de-lucros-com-disparo-de-68-para-682-milhoes-entre-julho-e-setembro/",
-      "title": "Galp bate su récord trimestral: gana 682 M€ (+68%) y eleva su objetivo de EBITDA a cerca de 5.000 M€",
-      "summary": "En nueve meses gana 1.494 M€ (+54%), impulsada por un margen de refino de 33,8 $/barril y el arranque del campo Bacalhau en Brasil. Los mercados internacionales aportan el 91% del EBITDA.",
-      "angle": "Beneficio muy ligado al ciclo de refino y al crudo: vigilar la normalización de márgenes en 2027.",
-      "rel": {
-        "COR": "alta",
-        "ENE": "media",
-        "STF": "media"
-      }
-    },
-    {
-      "id": "galp-moeve",
-      "date": "2026-10-26",
-      "source": "ECO",
-      "sourceType": "prensa",
-      "signal": "mna",
-      "url": "https://eco.sapo.pt/2026/10/26/oficial-galp-e-moeve-falham-acordo-para-fundir-negocios-de-refinacao-e-distribuicao/",
-      "title": "Galp y Moeve rompen sin acuerdo las negociaciones para unir refino y distribución",
-      "summary": "Las dos compañías dan por terminadas las conversaciones para combinar sus negocios de refino y comercialización en la península.",
-      "angle": "Se mantiene la estructura actual de ambos grupos; seguir posibles alternativas estratégicas en el refino ibérico.",
-      "rel": {
-        "COR": "media",
-        "STF": "media"
-      }
-    },
-    {
-      "id": "metrovacesa-9m",
-      "date": "2026-10-22",
-      "source": "Bolsamanía",
-      "sourceType": "prensa",
-      "signal": "resultados",
-      "url": "https://www.bolsamania.com/noticias/resultados-anuncios/metrovacesa-eleva-ingresos-septiembre-75-dividendo-1-euro-diciembre--23903423.html",
-      "title": "Metrovacesa ingresa 465 M€ hasta septiembre (+75%) y propone un dividendo de 1 € por acción",
-      "summary": "Entrega 1.172 viviendas (+44%) con un margen bruto del 27,4%. Sus preventas, 2.851 viviendas por 1.052 M€, cubren el 96% de las entregas de 2026 y el 83% de las de 2027.",
-      "angle": "Deuda neta de 227 M€ (LTV del 10,6%); el dividendo de diciembre supone unos 152 M€ de salida de caja.",
-      "rel": {
-        "RE": "alta",
-        "COR": "media"
-      }
-    },
-    {
-      "id": "indra-9m",
-      "date": "2026-10-29",
-      "source": "Bolsamanía",
-      "sourceType": "prensa",
-      "signal": "resultados",
-      "url": "https://www.bolsamania.com/noticias/resultados-anuncios/indra-gana-355-millones-nueve-primeros-meses-22-reitera-objetivos--23947139.html",
-      "title": "Indra gana 355 M€ hasta septiembre (+22%) y dispara su cartera a 22.165 M€",
-      "summary": "Los ingresos suben un 29%, hasta 4.645 M€, y el EBITDA un 62%, impulsados por espacio y defensa. Reitera objetivos y presentará un nuevo plan estratégico en noviembre.",
-      "angle": "Crecimiento acelerado vía defensa: seguir la financiación del nuevo plan y posibles adquisiciones.",
-      "rel": {
-        "COR": "media"
-      }
-    },
-    {
-      "id": "enagas-9m",
-      "date": "2026-10-20",
-      "source": "Enagás",
-      "sourceType": "primaria",
-      "signal": "resultados",
-      "url": "https://www.enagas.es/en/press-room/news-room/press-releases/results-3t-2026/",
-      "title": "Enagás gana 204 M€ hasta septiembre y completa la compra del 31,5% de Teréga",
-      "summary": "El beneficio incluye la venta del 40% de Enagás Renovable. La compra de Teréga costó 573 M€ y avanza la ingeniería del corredor de hidrógeno BarMar.",
-      "angle": "Más del 80% de su deuda es a tipo fijo (coste del 2,1%, vida media de 3,9 años), lo que limita la sensibilidad a una subida del BCE.",
-      "rel": {
-        "INF": "media",
-        "ENE": "media",
-        "COR": "media"
-      }
-    }
-  ],
-  "scope": "España y Portugal",
-  "archive": []
-}
+{"v":1,"alg":"AES-GCM","kdf":"PBKDF2-SHA256","iter":600000,"salt":"/bWczFYX+pNIzpBTIu+M6A==","iv":"CxuXOXyMlKFDpO9m","ct":"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"}
 </script>
 
 <script>
 (function () {
   "use strict";
 
-  var PASSWORD = "monitor";
-  var K = { unlock: "pmi-radar-unlocked", remember: "pmi-remember", brief: "pmi-radar-brief", view: "pmi-view", seen: "pmi-seen", mine: "pmi-mine", archTeam: "pmi-arch-team" };
+  var K = { key: "pmi-key", keyR: "pmi-key-r", brief: "pmi-radar-brief", view: "pmi-view", seen: "pmi-seen", mine: "pmi-mine", archTeam: "pmi-arch-team" };
 
   var TEAMS = [
     { code: "ENE", slug: "energia", short: "PF Energía", long: "Project Finance de Energía" },
@@ -1123,7 +473,8 @@ footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid
     { code: "RE", slug: "real-estate", short: "PF Real Estate", long: "Project Finance de Real Estate" },
     { code: "COR", slug: "corporaciones", short: "Grandes Corporaciones", long: "Grandes Corporaciones" },
     { code: "STF", slug: "stf", short: "STF", long: "Structured Trade Finance" },
-    { code: "LBO", slug: "lbo", short: "LBOs", long: "Leveraged Buyouts" }
+    { code: "LBO", slug: "lbo", short: "LBOs", long: "Leveraged Buyouts" },
+    { code: "SPK", slug: "spark", short: "Spark", long: "Spark · Venture capital y venture debt" }
   ];
   var BY_CODE = {}, BY_SLUG = {};
   TEAMS.forEach(function (t) { BY_CODE[t.code] = t; BY_SLUG[t.slug] = t; });
@@ -1142,9 +493,18 @@ footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid
   var WEEKDAYS = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
   var DIR_ARROW = { up: "▲", down: "▼", flat: "=" };
 
-  var DATA = JSON.parse(document.getElementById("news-data").textContent);
-  DATA.items = DATA.items || [];
-  DATA.archive = DATA.archive || [];
+  /* Las noticias llegan cifradas: solo se leen tras descifrarlas con la contraseña. */
+  var PAYLOAD = null;
+  try { PAYLOAD = JSON.parse(document.getElementById("news-data").textContent); } catch (e) {}
+  var DATA = { items: [], archive: [], summaries: {}, indicators: [], agenda: [] };
+  function setData(d) {
+    DATA = d || {};
+    DATA.items = DATA.items || [];
+    DATA.archive = DATA.archive || [];
+    DATA.summaries = DATA.summaries || {};
+    DATA.indicators = DATA.indicators || [];
+    DATA.agenda = DATA.agenda || [];
+  }
 
   /* ---------- Helpers ---------- */
   function store(kind) { try { return kind === "session" ? window.sessionStorage : window.localStorage; } catch (e) { return null; } }
@@ -1189,7 +549,7 @@ footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid
     });
   }
   function teamItems(code) {
-    return sortItems(DATA.items.filter(function (i) { return i.rel && i.rel[code]; }), function (i) { return i.rel[code]; }).slice(0, 20);
+    return sortItems(DATA.items.filter(function (i) { return i.rel && i.rel[code]; }), function (i) { return i.rel[code]; }).slice(0, 30);
   }
   function altaCount(list, relOf) { return list.filter(function (i) { return relOf(i) === "alta"; }).length; }
   function itemText(i) { return norm([i.title, i.summary, i.angle, i.source, SIGNALS[i.signal]].join(" ")); }
@@ -1443,7 +803,7 @@ footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid
     mainEl.innerHTML = bannerHTML() +
       '<section class="view-enter" aria-labelledby="team-h">' +
         '<div class="view-head"><div><div class="eyebrow">Equipo · ' + esc(team.short) + '</div><h2 id="team-h">' + esc(team.long) + "</h2>" +
-          "<p>" + list.length + " noticias (máximo 20), ordenadas de mayor a menor relevancia para este equipo.</p></div>" +
+          "<p>" + list.length + " noticias (máximo 30), ordenadas de mayor a menor relevancia para este equipo.</p></div>" +
           '<div class="side-actions"><button type="button" class="ghost-btn" id="copy-team">Copiar a Gmail</button>' +
           '<a class="gmail-link" href="' + esc(gmailUrl(team.code)) + '" target="_blank" rel="noopener noreferrer">Abrir borrador en Gmail ↗</a></div></div>' +
         '<div class="team-grid">' +
@@ -1497,7 +857,7 @@ footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid
           "<p>Escribe los nombres de empresas, sponsors o proyectos que sigues. La página marcará las noticias que los mencionen. " +
           "La lista se guarda solo en este navegador: no se publica ni se envía a ningún sitio. No añadas información interna ni de clientes que no sea pública.</p></div></div>" +
         '<form class="mine-form" id="mine-form"><label class="sr-only" for="mine-input">Nombre a seguir</label>' +
-          '<input id="mine-input" type="text" placeholder="Por ejemplo: Sacyr, Iberdrola, Mota-Engil" autocomplete="off">' +
+          '<input id="mine-input" type="text" placeholder="Escribe el nombre de una empresa o sponsor" autocomplete="off">' +
           '<button class="btn" type="submit">Añadir</button></form>' +
         '<div class="names">' + (chips || '<span class="empty">Todavía no sigues ningún nombre.</span>') + "</div>" +
         (state.mine.length
@@ -1739,7 +1099,7 @@ footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid
     if (e.key === "Escape") { if (!panel.hidden) { panel.hidden = true; return; } if (state.q) clearSearch(); return; }
     if (e.key === "/") { e.preventDefault(); qEl.focus(); qEl.select(); return; }
     if (e.key === "c" || e.key === "C") { setCompact(!state.compact); return; }
-    var n = parseInt(e.key, 10);
+    var n = e.key === "0" ? 10 : parseInt(e.key, 10);
     if (n >= 1 && n <= ORDER.length) { if (state.q) { qEl.value = ""; state.q = ""; } go(ORDER[n - 1]); }
   });
 
@@ -1760,30 +1120,80 @@ footer kbd { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid
     }
     route();
   }
+  /* Descifrado: AES-GCM con clave derivada de la contraseña (PBKDF2-SHA256). */
+  var cryptoOK = !!(window.crypto && window.crypto.subtle && window.TextEncoder && window.TextDecoder);
+  var encrypted = !!(PAYLOAD && PAYLOAD.ct && PAYLOAD.iv && PAYLOAD.salt && PAYLOAD.iter);
+  function b64d(s) { var bin = atob(s), a = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) a[i] = bin.charCodeAt(i); return a; }
+  function b64e(buf) { var a = new Uint8Array(buf), s = ""; for (var i = 0; i < a.length; i++) s += String.fromCharCode(a[i]); return btoa(s); }
+  function keyTag() { return PAYLOAD.salt + ":" + PAYLOAD.iter; }
+  function deriveKey(pass) {
+    return crypto.subtle.importKey("raw", new TextEncoder().encode(pass), "PBKDF2", false, ["deriveKey"]).then(function (base) {
+      return crypto.subtle.deriveKey({ name: "PBKDF2", salt: b64d(PAYLOAD.salt), iterations: PAYLOAD.iter, hash: "SHA-256" },
+        base, { name: "AES-GCM", length: 256 }, true, ["decrypt"]);
+    });
+  }
+  function decryptWith(key) {
+    return crypto.subtle.decrypt({ name: "AES-GCM", iv: b64d(PAYLOAD.iv) }, key, b64d(PAYLOAD.ct)).then(function (buf) {
+      return JSON.parse(new TextDecoder().decode(buf));
+    });
+  }
+  function rememberKey(key, persist) {
+    crypto.subtle.exportKey("raw", key).then(function (raw) {
+      var v = keyTag() + "|" + b64e(raw);
+      sset("session", K.key, v);
+      if (persist) sset("local", K.keyR, v);
+    }, function () {});
+  }
+  function storedKey() {
+    var v = sget("session", K.key) || sget("local", K.keyR);
+    if (!v) return null;
+    var i = v.lastIndexOf("|");
+    if (i < 0 || v.slice(0, i) !== keyTag()) { forgetKey(); return null; }
+    return v.slice(i + 1);
+  }
+  function forgetKey() { sdel("session", K.key); sdel("local", K.keyR); }
+  function focusPw() { try { document.getElementById("pw").focus({ preventScroll: true }); } catch (e) {} }
+
   function lock() {
-    sdel("session", K.unlock); sdel("local", K.remember);
+    forgetKey();
     app.hidden = true; gate.hidden = false;
     var pw = document.getElementById("pw");
     pw.value = ""; document.getElementById("pw-error").textContent = ""; pw.focus();
   }
-  document.getElementById("gate-form").addEventListener("submit", function (e) {
+  var gateForm = document.getElementById("gate-form");
+  gateForm.addEventListener("submit", function (e) {
     e.preventDefault();
     var pw = document.getElementById("pw");
     var err = document.getElementById("pw-error");
-    if (pw.value.trim().toLowerCase() === PASSWORD) {
-      sset("session", K.unlock, "1");
-      if (document.getElementById("remember").checked) sset("local", K.remember, "1");
-      err.textContent = "";
+    var btn = gateForm.querySelector('button[type="submit"]');
+    var pass = pw.value.trim().toLowerCase();
+    if (!pass) { err.textContent = "Escribe la contraseña."; pw.focus(); return; }
+    if (!cryptoOK || !encrypted) { err.textContent = "No se pueden abrir las noticias en este navegador. Usa Google Chrome actualizado."; return; }
+    var persist = document.getElementById("remember").checked;
+    btn.disabled = true; btn.textContent = "Comprobando…"; err.textContent = "";
+    function done() { btn.disabled = false; btn.textContent = "Entrar"; }
+    deriveKey(pass).then(function (key) {
+      return decryptWith(key).then(function (d) { return { key: key, data: d }; });
+    }).then(function (r) {
+      done();
+      setData(r.data);
+      rememberKey(r.key, persist);
       openApp();
-    } else {
+    }, function () {
+      done();
       err.textContent = "Contraseña incorrecta. Revísala e inténtalo de nuevo.";
       pw.select();
-    }
+    });
   });
   document.getElementById("logout").addEventListener("click", lock);
 
-  if (sget("session", K.unlock) === "1" || sget("local", K.remember) === "1") openApp();
-  else { try { document.getElementById("pw").focus({ preventScroll: true }); } catch (e) {} }
+  sdel("session", "pmi-radar-unlocked"); sdel("local", "pmi-remember");
+  var saved = cryptoOK && encrypted ? storedKey() : null;
+  if (saved) {
+    crypto.subtle.importKey("raw", b64d(saved), { name: "AES-GCM" }, true, ["decrypt"]).then(decryptWith).then(function (d) {
+      setData(d); openApp();
+    }, function () { forgetKey(); focusPw(); });
+  } else focusPw();
 })();
 </script>
 </body>
